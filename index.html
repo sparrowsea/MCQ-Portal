@@ -6,24 +6,47 @@
     <title>SALARIA - Master Revision Portal</title>
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f4f8; color: #333; margin: 0; padding-bottom: 30px; display: flex; flex-direction: column; align-items: center; }
-        .main-header { width: 100%; background: #1a252f; color: #ffffff; text-align: center; padding: 20px 0; font-size: 2.5rem; font-weight: bold; letter-spacing: 6px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); margin-bottom: 25px; }
+        
+        .main-header { 
+            width: 100%; 
+            background: #1a252f; 
+            color: #ffffff; 
+            text-align: center; 
+            padding: 20px 0; 
+            font-size: 2.5rem; 
+            font-weight: bold; 
+            letter-spacing: 6px; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3); 
+            margin-bottom: 25px; 
+            animation: subtleFade 4s ease-in-out infinite;
+        }
+        @keyframes subtleFade {
+            0%, 100% { opacity: 1; text-shadow: 0 0 5px rgba(255,255,255,0.1); }
+            50% { opacity: 0.65; text-shadow: 0 0 15px rgba(255,255,255,0.5); }
+        }
+
         .main-wrapper { display: flex; flex-wrap: wrap; gap: 20px; max-width: 1100px; width: 95%; justify-content: center; }
         
-        #dashboard-screen { width: 100%; max-width: 1000px; }
-        .subject-title { font-size: 1.8rem; color: #2c3e50; border-bottom: 3px solid #007bff; padding-bottom: 10px; margin-top: 40px; }
+        .dashboard-screen { width: 100%; max-width: 1000px; }
+        .subject-title { font-size: 1.8rem; color: #2c3e50; border-bottom: 3px solid #007bff; padding-bottom: 10px; margin-top: 40px; display: flex; justify-content: space-between; align-items: center;}
         .jkssb-title { border-bottom-color: #e53e3e; }
         .jkpsc-title { border-bottom-color: #38a169; }
         
-        .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; margin-top: 20px; }
+        .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; margin-top: 20px; }
         .test-card { background: #fff; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center; border-top: 4px solid #007bff; cursor: pointer; transition: 0.3s; display: flex; flex-direction: column; justify-content: space-between;}
         .test-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
         .test-card.jkssb-card { border-top-color: #e53e3e; }
         .test-card.jkpsc-card { border-top-color: #38a169; }
+        .test-card.polity-sub { border-top-color: #805ad5; padding: 15px; }
         
         .test-card h3 { margin: 0 0 10px 0; color: #2d3748; font-size: 1.4rem; }
-        .test-card p { margin: 0 0 20px 0; color: #718096; }
+        .test-card.polity-sub h3 { font-size: 1.1rem; }
+        .test-card p { margin: 0 0 20px 0; color: #718096; font-size: 0.9rem;}
+        
         .btn-start { background: #2d3748; color: white; padding: 10px 20px; border: none; border-radius: 6px; font-weight: bold; font-size: 1rem; width: 100%; cursor: pointer; transition: 0.2s;}
         .test-card:hover .btn-start { background: #1a202c; }
+        .btn-back { background: #4a5568; color: white; padding: 8px 15px; border: none; border-radius: 6px; cursor: pointer; font-size: 0.9rem; font-weight: bold;}
+        .btn-back:hover { background: #2d3748; }
 
         #test-wrapper { display: none; width: 100%; gap: 20px; max-width: 1100px; }
         .quiz-container { background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); flex: 2; min-width: 320px; border-top: 5px solid #007bff; }
@@ -43,7 +66,7 @@
         @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
 
         .btn-group { display: flex; justify-content: space-between; margin-top: 25px; gap: 15px; }
-        button { padding: 12px 20px; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 1rem; transition: 0.2s; }
+        button.action-btn { padding: 12px 20px; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 1rem; transition: 0.2s; flex: 1;}
         .btn-nav { background: #4a5568; color: white; }
         .btn-nav:hover { background: #2d3748; }
         .btn-nav:disabled { background: #cbd5e0; cursor: not-allowed; }
@@ -56,7 +79,7 @@
         .palette-btn.wrong { background: #e53e3e; color: white; border-color: #c53030; }
         .palette-btn.active { border: 3px solid #000; transform: scale(1.05); }
         
-        #result-screen { display: none; width: 100%; max-width: 850px; background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
+        #result-screen { display: none; width: 100%; max-width: 850px; background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); margin-top: 20px;}
         .score-box { background: #ebf8ff; padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px; border: 1px solid #bee3f8; }
     </style>
 </head>
@@ -64,72 +87,61 @@
 
 <div class="main-header">SALARIA</div>
 
-<div id="dashboard-screen" class="main-wrapper">
+<div id="main-dashboard" class="main-wrapper dashboard-screen">
     <div style="width: 100%;">
         <h2 style="text-align: center; font-size: 2rem; margin-top: 0; color: #2d3748;">Master Assessment Dashboard</h2>
         
         <h3 class="subject-title jkssb-title">JKSSB Module</h3>
         <div class="card-grid">
             <div class="test-card jkssb-card" onclick="startTest('jkssb_english')">
-                <h3>English</h3>
-                <p>Grammar, Comprehension & Vocabulary</p>
-                <button class="btn-start">Start Practice</button>
+                <h3>English</h3><p>Grammar, Comprehension & Vocab</p><button class="btn-start">Start Practice</button>
             </div>
             <div class="test-card jkssb-card" onclick="startTest('jkssb_maths')">
-                <h3>Maths & Reasoning</h3>
-                <p>Quantitative Aptitude & Logic</p>
-                <button class="btn-start">Start Practice</button>
+                <h3>Maths & Reasoning</h3><p>Quantitative Aptitude & Logic</p><button class="btn-start">Start Practice</button>
             </div>
             <div class="test-card jkssb-card" onclick="startTest('jkssb_gk')">
-                <h3>General Knowledge</h3>
-                <p>Current Affairs & Static GK</p>
-                <button class="btn-start">Start Practice</button>
+                <h3>General Knowledge</h3><p>Current Affairs & Static GK</p><button class="btn-start">Start Practice</button>
             </div>
             <div class="test-card jkssb-card" onclick="startTest('jkssb_science')">
-                <h3>General Science</h3>
-                <p>Physics, Chemistry & Biology</p>
-                <button class="btn-start">Start Practice</button>
+                <h3>General Science</h3><p>Physics, Chemistry & Biology</p><button class="btn-start">Start Practice</button>
             </div>
             <div class="test-card jkssb-card" onclick="startTest('jkssb_computer')">
-                <h3>Computer Science</h3>
-                <p>Advanced Statement Based (50 Qs)</p>
-                <button class="btn-start">Start Practice</button>
+                <h3>Computer Science</h3><p>Advanced Statement Based (50 Qs)</p><button class="btn-start">Start Practice</button>
             </div>
         </div>
 
         <h3 class="subject-title jkpsc-title">JKPSC Module</h3>
         <div class="card-grid">
-            <div class="test-card jkpsc-card" onclick="startTest('jkpsc_polity_ch1')">
-                <h3>Polity - Chapter 1</h3>
-                <p>Historical Background</p>
-                <button class="btn-start">Start Practice</button>
-            </div>
-            <div class="test-card jkpsc-card" onclick="startTest('jkpsc_polity_ch2')">
-                <h3>Polity - Chapter 2</h3>
-                <p>Making of the Constitution</p>
-                <button class="btn-start">Start Practice</button>
-            </div>
-            <div class="test-card jkpsc-card" onclick="startTest('jkpsc_polity_ch3')">
-                <h3>Polity - Chapter 3</h3>
-                <p>Salient Features (14 Qs)</p>
-                <button class="btn-start">Start Practice</button>
+            <div class="test-card jkpsc-card" onclick="openPolityDashboard()">
+                <h3>Polity</h3><p>Chapter-wise & Model Papers</p><button class="btn-start">Open Module</button>
             </div>
             <div class="test-card jkpsc-card" onclick="startTest('jkpsc_geography')">
-                <h3>Geography</h3>
-                <p>Indian & World Geography</p>
-                <button class="btn-start">Start Practice</button>
+                <h3>Geography</h3><p>Indian & World Geography</p><button class="btn-start">Start Practice</button>
             </div>
             <div class="test-card jkpsc-card" onclick="startTest('jkpsc_history')">
-                <h3>History</h3>
-                <p>Ancient, Medieval & Modern</p>
-                <button class="btn-start">Start Practice</button>
+                <h3>History</h3><p>Ancient, Medieval & Modern</p><button class="btn-start">Start Practice</button>
             </div>
             <div class="test-card jkpsc-card" onclick="startTest('jkpsc_economics')">
-                <h3>Economics</h3>
-                <p>Indian Economy & Development</p>
-                <button class="btn-start">Start Practice</button>
+                <h3>Economics</h3><p>Indian Economy & Development</p><button class="btn-start">Start Practice</button>
             </div>
         </div>
+    </div>
+</div>
+
+<div id="polity-dashboard" class="main-wrapper dashboard-screen" style="display:none;">
+    <div style="width: 100%;">
+        <h3 class="subject-title jkpsc-title" style="border-bottom-color:#805ad5;">
+            Polity Sub-Modules
+            <button class="btn-back" onclick="backToMain()">← Back to Main</button>
+        </h3>
+        
+        <h4 style="color:#4a5568; margin-top:30px; font-size:1.3rem;">Chapter-wise Tests</h4>
+        <div class="card-grid" id="polity-chapters-grid" style="grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));">
+            </div>
+
+        <h4 style="color:#4a5568; margin-top:40px; font-size:1.3rem;">Full Model Papers</h4>
+        <div class="card-grid" id="polity-models-grid" style="grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));">
+            </div>
     </div>
 </div>
 
@@ -137,7 +149,7 @@
     <div class="quiz-container">
         <div class="header-top">
             <h1 id="quiz-title" style="font-size: 1.3rem;">Practice Mode</h1>
-            <div class="timer" id="timer-display">50:00:000</div>
+            <div class="timer" id="timer-display">00:00:000</div>
         </div>
         <p><strong>Question <span id="current-q">1</span> of <span id="total-qs-count"></span></strong></p>
         <h2 id="question-text">Loading...</h2>
@@ -146,10 +158,10 @@
         <div id="explanation-box"></div>
 
         <div class="btn-group">
-            <button class="btn-nav" id="prev-btn" onclick="prevQuestion()">Previous</button>
-            <button class="btn-nav" id="next-btn" onclick="nextQuestion()">Next</button>
+            <button class="action-btn btn-nav" id="prev-btn" onclick="prevQuestion()">Previous</button>
+            <button class="action-btn btn-nav" id="next-btn" onclick="nextQuestion()">Next</button>
         </div>
-        <button class="btn-submit" onclick="submitTest()">End Practice Session</button>
+        <button class="action-btn btn-submit" onclick="submitTest()">End Practice Session</button>
     </div>
 
     <div class="sidebar">
@@ -170,14 +182,13 @@
             <div style="font-size: 2.5rem; font-weight: bold; color: #2b6cb0;">Total Correct: <span id="final-score"></span></div>
         </div>
         <div style="text-align: center; gap: 15px; display: flex; justify-content: center;">
-            <button onclick="location.reload()" style="background: #2d3748; color: white; padding: 15px 30px; font-size: 1.1rem; border-radius: 8px; border: none; cursor: pointer;">Back to Dashboard</button>
+            <button onclick="closeTest()" style="background: #2d3748; color: white; padding: 15px 30px; font-size: 1.1rem; border-radius: 8px; border: none; cursor: pointer; font-weight:bold;">Back to Dashboard</button>
         </div>
     </div>
 </div>
 
 <script>
     const allQuizBanks = {
-        
         "jkssb_english": [
             { question: "Identify the correct synonym for 'Ephemeral':", options: ["A) Eternal", "B) Transitory", "C) Pervasive", "D) Luminous"], answer: 1, explanation: "Ephemeral means lasting for a very short time (transitory)." }
         ],
@@ -252,7 +263,7 @@
             { question: "Consider the following statements about the 'Objectives Resolution':\n1. It was moved by Jawaharlal Nehru in the Constituent Assembly.\n2. Its modified version forms the Preamble of the present Constitution.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 2, explanation: "Both are correct. Nehru moved it on Dec 13, 1946, laying down the philosophical framework of the Constitution." }
         ],
         "jkpsc_polity_ch3": [
-            { question: "1. Which of the following statements about the Constitution of India is/are correct?\n1. Popular sovereignty and adult franchise are the basic features of the Constitution.\n2. The Constitution, in so far as the division of powers between the Centre and the States is concerned, is rigid.\n3. The Constitution recognises the interdependence of civil and economic rights.\n4. The Constitution mentions direct control by the people such as referendum, initiative and recall.", options: ["A) Only 1", "B) 1, 2 and 4", "C) 2, 3 and 4", "D) 1, 2 and 3"], answer: 3, explanation: "The Constitution of India does not provide for direct control by the people such as referendum, initiative, and recall." },
+            { question: "1. Which of the following statements about the Constitution of India is/are correct?\n1. Popular sovereignty and adult franchise are the basic features of the Constitution.\n2. The Constitution, in so far as the division of powers between the Centre and the States is concerned, is rigid.\n3. The Constitution recognises the interdependence of civil and economic rights.\n4. The Constitution mentions direct control by the people such as referendum, initiative and recall.\nSelect the correct answer from the codes given below:", options: ["A) Only 1", "B) 1, 2 and 4", "C) 2, 3 and 4", "D) 1, 2 and 3"], answer: 3, explanation: "The Constitution of India does not provide for direct control by the people such as referendum, initiative, and recall." },
             { question: "2. Consider the following statements related to secularism in India:\n1. It entails strict separation of religion from politics.\n2. It bans parties with religious affiliations from contesting elections.\n3. It grants religious liberty to all communities.\n4. It accepts community personal laws.\nWhich of the statements given above are correct?", options: ["A) 3 and 4", "B) 1 and 2", "C) 1, 3 and 4", "D) 1, 2, 3 and 4"], answer: 2, explanation: "Secularism in India grants religious liberty to all communities and accepts community personal laws, but does not strictly separate religion from politics nor bans parties with religious affiliations." },
             { question: "3. Which one of the following Schedules of the Constitution of India incorporates salaries and allowances of members of Parliament, the Chairman and Deputy Chairman of the Rajya Sabha, and Speaker and Deputy Speaker of the Lok Sabha, as one of the items?", options: ["A) Fifth Schedule", "B) Second Schedule", "C) Ninth Schedule", "D) Tenth Schedule"], answer: 1, explanation: "The Second Schedule of the Constitution contains provisions relating to the salaries, allowances, etc., of constitutional functionaries." },
             { question: "4. Match List I with List II and select the correct answer using the codes given below:\nList-I\nA. Finance, Property, Contracts and Suits\nB. The Union Judiciary\nC. The Executive of States\nD. Relations between the Union and the States\nList-II\n1. Part V\n2. Part XII\n3. Part XI\n4. Part VI", options: ["A) 4, 3, 2, 1", "B) 2, 1, 4, 3", "C) 4, 1, 2, 3", "D) 2, 3, 4, 1"], answer: 1, explanation: "Part XII deals with Finance, Part V with Union Judiciary, Part VI with Executive of States, Part XI with Centre-State relations." },
@@ -281,20 +292,61 @@
     let activeQuizData = [];
     let currentQ = 0;
     let userAnswers = [];
-    let totalDuration = 50 * 60 * 1000; 
+    let totalDuration = 0; 
     let endTime;
     let timerInterval;
+    let currentContext = 'main';
+
+    function generatePolityDashboard() {
+        let chHTML = '';
+        for(let i=1; i<=71; i++) {
+            chHTML += `<div class="test-card polity-sub jkpsc-card" onclick="startTest('jkpsc_polity_ch${i}')">
+                <h3>Chapter ${i}</h3><button class="btn-start">Start</button></div>`;
+        }
+        document.getElementById('polity-chapters-grid').innerHTML = chHTML;
+
+        let mpHTML = '';
+        for(let i=1; i<=10; i++) {
+            mpHTML += `<div class="test-card polity-sub jkpsc-card" onclick="startTest('jkpsc_polity_mp${i}')">
+                <h3>Model Paper ${i}</h3><button class="btn-start">Start</button></div>`;
+        }
+        document.getElementById('polity-models-grid').innerHTML = mpHTML;
+    }
+
+    function openPolityDashboard() {
+        document.getElementById('main-dashboard').style.display = 'none';
+        document.getElementById('polity-dashboard').style.display = 'block';
+        currentContext = 'polity';
+        generatePolityDashboard();
+    }
+
+    function backToMain() {
+        document.getElementById('polity-dashboard').style.display = 'none';
+        document.getElementById('main-dashboard').style.display = 'block';
+        currentContext = 'main';
+    }
 
     function startTest(testKey) {
+        if (!allQuizBanks[testKey] || allQuizBanks[testKey].length === 0) {
+            alert("⚠️ Questions for this section are pending extraction from the PDF. \n\nPlease ask the AI to generate the specific batch (e.g., 'Fetch questions for Polity Chapter 4').");
+            return;
+        }
+
+        clearInterval(timerInterval);
+
         activeQuizData = allQuizBanks[testKey];
         userAnswers = new Array(activeQuizData.length).fill(null);
         currentQ = 0;
 
-        document.getElementById('dashboard-screen').style.display = 'none';
+        document.getElementById('main-dashboard').style.display = 'none';
+        document.getElementById('polity-dashboard').style.display = 'none';
         document.getElementById('test-wrapper').style.display = 'flex';
         
         document.getElementById('total-qs-count').innerText = activeQuizData.length;
-        if (testKey.includes("jkpsc")) {
+        if (testKey.includes("polity")) {
+            document.getElementById('quiz-title').innerText = "Polity Exam Mode";
+            document.querySelector('.quiz-container').style.borderTopColor = "#805ad5";
+        } else if (testKey.includes("jkpsc")) {
             document.getElementById('quiz-title').innerText = "JKPSC Exam Mode";
             document.querySelector('.quiz-container').style.borderTopColor = "#38a169";
         } else {
@@ -313,7 +365,12 @@
             grid.appendChild(btn);
         }
         
+        totalDuration = activeQuizData.length * 60 * 1000;
         endTime = Date.now() + totalDuration;
+        
+        let m = Math.floor(totalDuration / (1000 * 60));
+        document.getElementById('timer-display').innerText = String(m).padStart(2, '0') + ":00:000";
+
         startTimer();
         loadQuestion(0);
     }
@@ -419,6 +476,15 @@
         
         document.getElementById('final-score').innerText = `${correct} / ${activeQuizData.length}`;
         window.scrollTo(0,0);
+    }
+
+    function closeTest() {
+        document.getElementById('result-screen').style.display = 'none';
+        if (currentContext === 'polity') {
+            document.getElementById('polity-dashboard').style.display = 'block';
+        } else {
+            document.getElementById('main-dashboard').style.display = 'block';
+        }
     }
 </script>
 
