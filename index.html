@@ -3,34 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SALARIA - JKSSB Computer Portal</title>
+    <title>SALARIA - Instant Feedback Portal</title>
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f4f8; color: #333; margin: 0; padding-bottom: 30px; display: flex; flex-direction: column; align-items: center; }
         .main-header { width: 100%; background: #1a252f; color: #ffffff; text-align: center; padding: 20px 0; font-size: 2.5rem; font-weight: bold; letter-spacing: 6px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); margin-bottom: 25px; }
         .main-wrapper { display: flex; flex-wrap: wrap; gap: 20px; max-width: 1100px; width: 95%; }
         .quiz-container { background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); flex: 2; min-width: 320px; border-top: 5px solid #007bff; }
-        .sidebar { background: #fff; padding: 20px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); flex: 1; min-width: 280px; align-self: flex-start; }
+        .sidebar { background: #fff; padding: 20px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); flex: 1; min-width: 280px; align-self: flex-start; position: sticky; top: 20px; }
         .header-top { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #eee; padding-bottom: 15px; margin-bottom: 20px; }
-        .timer { font-size: 1.4rem; font-weight: bold; color: #d9534f; background: #fff5f5; padding: 8px 15px; border-radius: 8px; border: 2px solid #feb2b2; }
-        h2 { font-size: 1.2rem; color: #2d3748; line-height: 1.6; margin-bottom: 25px; white-space: pre-line; }
-        .option-label { display: block; background: #f7fafc; padding: 14px 18px; margin-bottom: 12px; border-radius: 8px; cursor: pointer; border: 1px solid #e2e8f0; transition: all 0.2s; }
-        .option-label:hover { background: #edf2f7; border-color: #cbd5e0; }
-        .option-label.selected { background: #ebf8ff; border-color: #4299e1; font-weight: bold; }
+        .timer { font-size: 1.5rem; font-weight: bold; color: #d9534f; background: #fff5f5; padding: 8px 15px; border-radius: 8px; border: 2px solid #feb2b2; font-family: monospace; width: 140px; text-align: center; }
+        h2 { font-size: 1.15rem; color: #2d3748; line-height: 1.6; margin-bottom: 25px; white-space: pre-line; }
+        
+        /* Options Styling */
+        .option-label { display: block; background: #f7fafc; padding: 14px 18px; margin-bottom: 12px; border-radius: 8px; cursor: pointer; border: 1px solid #e2e8f0; transition: all 0.2s; position: relative;}
+        .option-label:hover:not(.disabled) { background: #edf2f7; border-color: #cbd5e0; }
+        .option-label.disabled { cursor: not-allowed; opacity: 0.8; }
+        .option-label.correct { background: #d4edda; border-color: #c3e6cb; color: #155724; font-weight: bold; }
+        .option-label.wrong { background: #f8d7da; border-color: #f5c6cb; color: #721c24; font-weight: bold; text-decoration: line-through; }
         input[type="radio"] { display: none; }
+        
+        /* Explanation Box */
+        #explanation-box { display: none; background: #fffaf0; border-left: 5px solid #ed8936; padding: 15px; margin-top: 20px; font-size: 0.95rem; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); animation: fadeIn 0.3s;}
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+
         .btn-group { display: flex; justify-content: space-between; margin-top: 25px; gap: 15px; }
         button { padding: 12px 20px; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 1rem; transition: 0.2s; }
         .btn-nav { background: #4a5568; color: white; }
         .btn-nav:hover { background: #2d3748; }
+        .btn-nav:disabled { background: #cbd5e0; cursor: not-allowed; }
         .btn-submit { background: #38a169; color: white; width: 100%; margin-top: 15px; }
         .btn-submit:hover { background: #2f855a; }
+        
+        /* Palette */
         .palette-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-top: 15px; }
-        .palette-btn { padding: 12px 0; text-align: center; border-radius: 6px; border: 1px solid #e2e8f0; background: #fff; cursor: pointer; font-weight: bold; font-size: 0.9rem; }
-        .palette-btn.answered { background: #48bb78; color: white; border-color: #38a169; }
-        .palette-btn.active { border: 3px solid #4299e1; }
+        .palette-btn { padding: 12px 0; text-align: center; border-radius: 6px; border: 1px solid #e2e8f0; background: #fff; cursor: pointer; font-weight: bold; font-size: 0.9rem; transition: 0.2s;}
+        .palette-btn.correct { background: #48bb78; color: white; border-color: #38a169; }
+        .palette-btn.wrong { background: #e53e3e; color: white; border-color: #c53030; }
+        .palette-btn.active { border: 3px solid #000; transform: scale(1.05); }
+        
+        /* Result Screen */
         .result-screen { display: none; width: 95%; max-width: 850px; background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
         .score-box { background: #ebf8ff; padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px; border: 1px solid #bee3f8; }
-        .review-item { border-bottom: 1px solid #edf2f7; padding: 25px 0; }
-        .explanation { background: #fffaf0; border-left: 5px solid #ed8936; padding: 15px; margin-top: 15px; font-size: 0.95rem; border-radius: 4px; }
     </style>
 </head>
 <body>
@@ -40,79 +53,102 @@
 <div class="main-wrapper" id="test-wrapper">
     <div class="quiz-container">
         <div class="header-top">
-            <h1 style="font-size: 1.3rem;">JKSSB Computer Advanced Mock</h1>
-            <div class="timer" id="timer-display">60:00</div>
+            <h1 style="font-size: 1.3rem;">Instant Revision Mode</h1>
+            <div class="timer" id="timer-display">50:00:000</div>
         </div>
         <p><strong>Question <span id="current-q">1</span> of <span id="total-qs-count"></span></strong></p>
         <h2 id="question-text">Loading...</h2>
+        
         <div class="options" id="options-container"></div>
+        
+        <div id="explanation-box"></div>
+
         <div class="btn-group">
             <button class="btn-nav" id="prev-btn" onclick="prevQuestion()">Previous</button>
             <button class="btn-nav" id="next-btn" onclick="nextQuestion()">Next</button>
         </div>
-        <button class="btn-submit" onclick="submitTest(false)">Submit Final Test</button>
+        <button class="btn-submit" onclick="submitTest()">End Practice & See Final Score</button>
     </div>
 
     <div class="sidebar">
-        <h3 style="text-align:center; margin-top:0;">Navigation</h3>
+        <h3 style="text-align:center; margin-top:0;">Live Tracker</h3>
         <div class="palette-grid" id="palette-grid"></div>
-        <div style="margin-top:20px; font-size:0.85rem; color:#718096; text-align:center;">Green = Answered | White = Unattempted</div>
+        <div style="margin-top:20px; font-size:0.85rem; color:#718096; text-align:center; line-height: 1.5;">
+            <span style="color:#48bb78; font-weight:bold;">Green</span> = Correct <br>
+            <span style="color:#e53e3e; font-weight:bold;">Red</span> = Incorrect <br>
+            White = Unattempted
+        </div>
     </div>
 </div>
 
 <div class="result-screen" id="result-screen">
-    <h1 style="text-align: center; color: #2d3748;">Performance Analysis</h1>
+    <h1 style="text-align: center; color: #2d3748;">Session Completed</h1>
     <div class="score-box">
-        <div style="font-size: 2.5rem; font-weight: bold; color: #2b6cb0;">Total: <span id="final-score"></span></div>
+        <div style="font-size: 2.5rem; font-weight: bold; color: #2b6cb0;">Total Correct: <span id="final-score"></span></div>
     </div>
-    <div id="review-container"></div>
+    <div style="text-align: center;">
+        <button onclick="location.reload()" style="background: #007bff; color: white; padding: 15px 30px; font-size: 1.2rem; border-radius: 8px;">Restart Practice</button>
+    </div>
 </div>
 
 <script>
     const quizData = [
-        // EASTER EGG
         { question: "Who is the bosss?", options: ["A) Rajput hunde surme", "B) Gagan", "C) Akash", "D) Avneet", "E) Sumit"], answer: 0, explanation: "Rajput hunde surme! The undisputed boss." },
-
-        // --- SECTION 1: INVENTORS & FATHERS ---
-        { question: "Consider the following statements:\n1. Charles Babbage is known as the Father of the Computer.\n2. Lady Ada Lovelace is regarded as the first computer programmer.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 2, explanation: "Both statements are historically correct." },
-        { question: "Consider the following statements regarding the invention of the Web:\n1. Tim Berners-Lee invented the World Wide Web in 1989.\n2. Vint Cerf is widely known as the 'Father of the Internet'.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 2, explanation: "Both statements are correct. Vint Cerf co-developed TCP/IP, earning him the title 'Father of the Internet'." },
-        { question: "Consider the following statements:\n1. Douglas Engelbart is credited with the invention of the computer mouse.\n2. Christopher Sholes invented the QWERTY keyboard layout.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 2, explanation: "Both statements are factual and correctly identify the inventors." },
-        { question: "Consider the following statements regarding early email systems:\n1. Ray Tomlinson is considered the creator of the first electronic email system.\n2. The '@' symbol was introduced by Larry Page to separate the user from the machine name.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 0, explanation: "Statement 2 is wrong. Ray Tomlinson introduced the '@' symbol, not Larry Page." },
+        { question: "Consider the following statements:\n1. Charles Babbage designed the 'Difference Engine' and the 'Analytical Engine'.\n2. Lady Ada Lovelace is regarded as the first computer programmer.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 2, explanation: "Both statements are historically correct." },
+        { question: "Consider the following statements regarding the invention of the Internet and Web:\n1. Tim Berners-Lee invented the World Wide Web in 1989.\n2. Vint Cerf is widely known as the 'Father of the Internet'.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 2, explanation: "Both statements are correct. The Internet (infrastructure) and the WWW (information space) have different inventors." },
+        { question: "Consider the following statements:\n1. Douglas Engelbart is credited with the invention of the computer mouse.\n2. Christopher Latham Sholes invented the QWERTY keyboard layout.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 2, explanation: "Both statements correctly identify the inventors of these standard input devices." },
+        { question: "Consider the following statements regarding early email systems:\n1. Ray Tomlinson is considered the creator of the first networked email system.\n2. The '@' symbol was introduced by Larry Page.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 0, explanation: "Statement 2 is incorrect. Ray Tomlinson himself introduced the '@' symbol for email routing, not Larry Page." },
         { question: "Consider the following statements about Artificial Intelligence:\n1. Alan Turing coined the term 'Artificial Intelligence' in 1955.\n2. John McCarthy is widely recognized as the Father of Artificial Intelligence.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 1, explanation: "Statement 1 is incorrect. John McCarthy coined the term, not Alan Turing." },
-        { question: "Consider the following pairs of inventors and their creations:\n1. Dennis Ritchie - C programming language\n2. Bjarne Stroustrup - Python programming language\nWhich of the above pairs is/are correctly matched?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 0, explanation: "Statement 2 is incorrect. Bjarne Stroustrup created C++, while Python was created by Guido van Rossum." },
-        { question: "Consider the following statements:\n1. The Integrated Circuit (IC) was independently invented by Jack Kilby and Robert Noyce.\n2. The first commercial microprocessor (Intel 4004) was developed by Gordon Moore.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 0, explanation: "Statement 2 is incorrect. The Intel 4004 was primarily developed by Marcian 'Ted' Hoff and Federico Faggin." },
-        { question: "Consider the following statements regarding computer architecture:\n1. The 'Stored-Program Concept' was introduced by John von Neumann.\n2. Von Neumann architecture uses separate memory units for data and instructions.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 0, explanation: "Statement 2 is incorrect. Von Neumann architecture uses a SINGLE shared memory for both data and instructions. Harvard architecture uses separate memories." },
-        { question: "Consider the following statements:\n1. Linus Torvalds created the Linux operating system kernel.\n2. Herman Hollerith invented the punch card tabulating machine.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 2, explanation: "Both statements are correct. Hollerith's company later became IBM." },
-        { question: "Consider the following statements about programming language pioneers:\n1. James Gosling created the Java programming language.\n2. Grace Hopper invented the first compiler.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 2, explanation: "Both statements are correct." },
-
-        // --- SECTION 2: FULL FORMS & ABBREVIATIONS ---
+        { question: "Consider the following pairs of inventors and their creations:\n1. Dennis Ritchie - C programming language\n2. James Gosling - Java programming language\nWhich of the above pairs is/are correctly matched?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 2, explanation: "Both pairs are correctly matched." },
+        { question: "Consider the following statements:\n1. Guido van Rossum created the Python programming language.\n2. Bjarne Stroustrup developed the C++ programming language.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 2, explanation: "Both statements accurately reflect the creators of these major programming languages." },
+        { question: "Consider the following statements:\n1. The Integrated Circuit (IC) was independently invented by Jack Kilby and Robert Noyce.\n2. The first commercial microprocessor (Intel 4004) was primarily developed by Marcian 'Ted' Hoff.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 2, explanation: "Both statements are correct historical facts in the evolution of computer hardware." },
+        { question: "Consider the following statements regarding computer architecture:\n1. The 'Stored-Program Concept' was introduced by John von Neumann.\n2. Von Neumann architecture uses separate physical memory units for data and instructions.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 0, explanation: "Statement 2 is incorrect. Von Neumann architecture uses a SINGLE shared memory for both data and instructions." },
+        { question: "Consider the following statements:\n1. Linus Torvalds created the Linux operating system kernel.\n2. Herman Hollerith invented the punch card tabulating machine.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 2, explanation: "Both statements are correct. Hollerith's tabulating machine company eventually merged to become IBM." },
+        { question: "Consider the following pairs:\n1. Grace Hopper - First Compiler (A-0 System)\n2. Edgar F. Codd - Relational Database Model\nWhich of the above pairs is/are correctly matched?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 2, explanation: "Both pairs are correct. Codd's paper in 1970 laid the foundation for modern SQL databases." },
+        { question: "Consider the following statements regarding data storage:\n1. The floppy disk was invented by a team at IBM led by Alan Shugart.\n2. The first commercial hard disk drive was introduced by Apple in 1980.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 0, explanation: "Statement 2 is incorrect. The first commercial hard disk drive (RAMAC) was introduced by IBM in 1956." },
+        { question: "Consider the following statements regarding wireless technology:\n1. Bluetooth technology was invented by Jaap Haartsen while working at Ericsson.\n2. Wi-Fi technology was pioneered by John O'Sullivan and his team at CSIRO.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 2, explanation: "Both statements correctly identify the key figures behind these ubiquitous wireless standards." },
+        { question: "Consider the following statements:\n1. The USB (Universal Serial Bus) standard was co-invented by Ajay Bhatt at Intel.\n2. Ethernet technology was co-invented by Robert Metcalfe.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 2, explanation: "Both statements are accurate. Ajay Bhatt developed USB, and Bob Metcalfe developed Ethernet." },
+        { question: "Consider the following statements about early computers:\n1. The ENIAC is widely considered the first general-purpose electronic digital computer.\n2. The UNIVAC I was the first commercial computer produced in the United States.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 2, explanation: "Both statements are correct milestones in 1st Generation computing." },
+        { question: "Consider the following statements:\n1. Steve Wozniak single-handedly designed and built the Apple I computer.\n2. Tim Paterson developed 86-DOS, which Microsoft bought and rebranded as MS-DOS.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 2, explanation: "Both statements are correct historical facts regarding the early PC revolution." },
         { question: "Consider the following statements regarding memory abbreviations:\n1. RAM stands for Read Access Memory.\n2. ROM stands for Random Only Memory.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 3, explanation: "Both are incorrect. RAM = Random Access Memory. ROM = Read Only Memory." },
         { question: "Consider the following statements:\n1. GUI stands for Graphical User Interface.\n2. BIOS stands for Basic Input Output System.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 2, explanation: "Both full forms are completely correct." },
         { question: "Consider the following statements regarding network terms:\n1. URL stands for Uniform Resource Locator.\n2. HTTP stands for HyperText Transmission Process.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 0, explanation: "Statement 2 is incorrect. HTTP stands for HyperText Transfer Protocol." },
-        { question: "Consider the following statements:\n1. PDF stands for Portable Document Format.\n2. SMTP stands for Simple Mail Transfer Protocol.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 2, explanation: "Both full forms are correct. PDF is by Adobe, and SMTP is used for sending emails." },
+        { question: "Consider the following statements:\n1. PDF stands for Portable Document Format.\n2. SMTP stands for Simple Mail Transfer Protocol.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 2, explanation: "Both full forms are correct." },
         { question: "Consider the following statements about networking hardware:\n1. LAN stands for Local Area Network.\n2. WAN stands for Wireless Area Network.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 0, explanation: "Statement 2 is incorrect. WAN stands for Wide (not Wireless) Area Network." },
         { question: "Consider the following statements regarding computer addresses:\n1. IP stands for Internet Protocol.\n2. MAC stands for Machine Access Control.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 0, explanation: "Statement 2 is incorrect. MAC stands for Media (not Machine) Access Control." },
         { question: "Consider the following statements about computer storage:\n1. SSD stands for Solid State Drive.\n2. HDD stands for High Density Disk.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 0, explanation: "Statement 2 is incorrect. HDD stands for Hard Disk Drive." },
         { question: "Consider the following statements:\n1. VPN stands for Virtual Private Network.\n2. DNS stands for Domain Name System.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 2, explanation: "Both statements are correct network terminology." },
         { question: "Consider the following statements regarding hardware:\n1. SMPS stands for Switched-Mode Power Supply.\n2. USB stands for Universal Serial Bus.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 2, explanation: "Both full forms are completely correct." },
-        { question: "Consider the following statements about input devices:\n1. OMR stands for Optical Mark Recognition.\n2. MICR stands for Magnetic Ink Character Recognition.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 2, explanation: "Both are correct. OMR is used for checking MCQ sheets, and MICR is used in banking for cheques." },
-
-        // --- SECTION 3: SHORTCUT KEYS ---
+        { question: "Consider the following statements about input devices:\n1. OMR stands for Optical Mark Recognition.\n2. MICR stands for Magnetic Ink Character Recognition.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 2, explanation: "Both are correct. OMR checks MCQ sheets, and MICR is used in banking for cheques." },
+        { question: "Consider the following statements regarding character encoding:\n1. ASCII stands for American Standard Code for Information Interchange.\n2. EBCDIC stands for Extended Binary Coded Decimal Interchange Code.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 2, explanation: "Both are correct formats for encoding text characters in computers." },
+        { question: "Consider the following statements about image file formats:\n1. JPEG stands for Joint Photographic Experts Group.\n2. PNG stands for Portable Network Graphics.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 2, explanation: "Both full forms represent common image file extensions." },
+        { question: "Consider the following statements:\n1. Wi-Fi officially stands for Wireless Fidelity.\n2. MODEM is a portmanteau for Modulator-Demodulator.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 2, explanation: "Both statements are accurate and commonly tested." },
+        { question: "Consider the following statements regarding email protocols:\n1. IMAP stands for Internet Message Access Protocol.\n2. POP3 stands for Post Office Protocol version 3.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 2, explanation: "Both are standard protocols used by email clients to retrieve messages from a server." },
+        { question: "Consider the following statements about CPU components:\n1. ALU stands for Arithmetic Logic Unit.\n2. CU stands for Control Unit.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 2, explanation: "Both are the fundamental building blocks of a Central Processing Unit." },
+        { question: "Consider the following statements regarding markup languages:\n1. HTML stands for HyperText Markup Language.\n2. XML stands for eXtensible Markup Language.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 2, explanation: "Both are correct standard markup languages used on the web." },
+        { question: "Consider the following statements about optical media:\n1. CD-ROM stands for Compact Disc Read-Only Memory.\n2. DVD stands for Digital Versatile Disc.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 2, explanation: "Both are correct full forms for common optical storage media." },
         { question: "Consider the following statements regarding MS Office shortcuts:\n1. Ctrl + Z is used to Undo the last action.\n2. Ctrl + Y is used to Redo the last action.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 2, explanation: "Both statements are correct universal shortcuts in Windows." },
         { question: "Consider the following statements:\n1. Ctrl + X is used to Copy selected text.\n2. Ctrl + V is used to Paste copied text.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 1, explanation: "Statement 1 is incorrect. Ctrl + X is used to CUT, while Ctrl + C is used to COPY." },
-        { question: "Consider the following statements regarding MS Word alignment shortcuts:\n1. Ctrl + E is used to Center Align text.\n2. Ctrl + J is used to Justify text.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 2, explanation: "Both statements are correct paragraph alignment shortcuts in MS Word." },
-        { question: "Consider the following statements about MS Excel:\n1. The F2 key is used to edit the active cell.\n2. Ctrl + ; (semicolon) is used to insert the current date.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 2, explanation: "Both statements correctly describe MS Excel functionality." },
-        { question: "Consider the following statements regarding MS PowerPoint shortcuts:\n1. Ctrl + N inserts a New Slide in the current presentation.\n2. Ctrl + M opens a completely new presentation file.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 3, explanation: "Both are incorrect because they are swapped. Ctrl + M inserts a New Slide, and Ctrl + N opens a New Presentation file." },
+        { question: "Consider the following statements regarding MS Word alignment shortcuts:\n1. Ctrl + E is used to Center Align text.\n2. Ctrl + J is used to Justify text.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 2, explanation: "Both statements are correct paragraph alignment shortcuts." },
+        { question: "Consider the following statements about MS Excel:\n1. The F2 key is used to edit the active cell.\n2. Ctrl + ; (semicolon) is used to insert the current date.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 2, explanation: "Both statements correctly describe vital MS Excel functionality." },
+        { question: "Consider the following statements regarding MS PowerPoint shortcuts:\n1. Ctrl + N inserts a New Slide in the current presentation.\n2. Ctrl + M opens a completely new presentation file.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 3, explanation: "Both are incorrect because they are swapped. Ctrl + M inserts a New Slide." },
         { question: "Consider the following statements:\n1. The F7 key is used to check Spelling and Grammar in MS Office.\n2. Ctrl + P opens the print dialog box.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 2, explanation: "Both statements correctly describe standard MS Office shortcuts." },
-        { question: "Consider the following statements regarding Windows OS shortcuts:\n1. Alt + Tab allows you to switch between open applications.\n2. Alt + F4 minimizes the currently active window.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 0, explanation: "Statement 2 is incorrect. Alt + F4 CLOSES the currently active window/application, it does not minimize it." },
-        { question: "Consider the following statements:\n1. Shift + Delete permanently deletes a file without sending it to the Recycle Bin.\n2. Windows Key + L immediately locks the PC screen.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 2, explanation: "Both statements are correct Windows OS shortcut commands." },
-        { question: "Consider the following statements regarding browser shortcuts:\n1. Ctrl + T opens a new browser tab.\n2. Ctrl + H opens the browser history.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 2, explanation: "Both shortcuts are universally standard across modern web browsers like Chrome and Edge." },
-        { question: "Consider the following statements regarding text navigation shortcuts:\n1. Ctrl + Home moves the cursor to the beginning of the document.\n2. Ctrl + End moves the cursor to the end of the line.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 0, explanation: "Statement 2 is incorrect. Ctrl + End moves the cursor to the END OF THE DOCUMENT. To move to the end of a line, you just press 'End'." }
+        { question: "Consider the following statements regarding Windows OS shortcuts:\n1. Alt + Tab allows you to switch between open applications.\n2. Alt + F4 minimizes the currently active window.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 0, explanation: "Statement 2 is incorrect. Alt + F4 CLOSES the window, it does not minimize it." },
+        { question: "Consider the following statements:\n1. Shift + Delete permanently deletes a file.\n2. Windows Key + L immediately locks the PC screen.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 2, explanation: "Both statements are correct standard Windows OS shortcut commands." },
+        { question: "Consider the following statements regarding browser shortcuts:\n1. Ctrl + T opens a new browser tab.\n2. Ctrl + H opens the browser history.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 2, explanation: "Both shortcuts are universally standard across modern web browsers." },
+        { question: "Consider the following statements regarding text navigation shortcuts:\n1. Ctrl + Home moves the cursor to the beginning of the document.\n2. Ctrl + End moves the cursor to the end of the line.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 0, explanation: "Statement 2 is incorrect. Ctrl + End moves to the END OF THE DOCUMENT." },
+        { question: "Consider the following statements regarding Windows OS shortcuts:\n1. Windows Key + D hides all open windows and displays the desktop.\n2. Windows Key + E opens the File Explorer.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 2, explanation: "Both are heavily tested JKSSB questions regarding basic Windows navigation." },
+        { question: "Consider the following statements about MS Excel shortcuts:\n1. Shift + Spacebar is used to select an entire row.\n2. Ctrl + Spacebar is used to select an entire column.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 2, explanation: "Both are correct. These are highly efficient shortcuts for Excel." },
+        { question: "Consider the following statements regarding MS Word formatting:\n1. Ctrl + = is the shortcut for Subscript (e.g., H2O).\n2. Ctrl + Shift + + is the shortcut for Superscript (e.g., X2).\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 2, explanation: "Both statements are correct for applying sub/superscript formatting in Word." },
+        { question: "Consider the following statements about MS Office:\n1. Ctrl + F opens the Find navigation pane.\n2. Ctrl + H opens the Find and Replace dialog box.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 2, explanation: "Both are standard commands for locating and altering text within a document." },
+        { question: "Consider the following statements regarding Function keys:\n1. F5 is used to refresh a browser page or start a slide show in PowerPoint.\n2. F12 is used to open the 'Save As' dialog box in MS Office.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 2, explanation: "Both statements correctly describe the default behavior of these specific function keys." },
+        { question: "Consider the following statements regarding web browsers:\n1. Ctrl + Shift + T reopens the most recently closed tab.\n2. Ctrl + Shift + N opens a new Incognito window in Chrome.\nWhich of the statements given above is/are correct?", options: ["A) 1 only", "B) 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], answer: 2, explanation: "Both are highly useful and commonly tested browser shortcuts." }
     ];
 
     let currentQ = 0;
     let userAnswers = new Array(quizData.length).fill(null);
-    let timeLeft = 60 * 60;
+    let totalDuration = 50 * 60 * 1000; // 50 mins in ms
+    let endTime;
     let timerInterval;
 
     document.getElementById('total-qs-count').innerText = quizData.length;
@@ -128,31 +164,79 @@
             btn.onclick = () => loadQuestion(i);
             grid.appendChild(btn);
         }
-        loadQuestion(0);
+        
+        endTime = Date.now() + totalDuration;
         startTimer();
+        loadQuestion(0);
     }
 
     function loadQuestion(index) {
         currentQ = index;
         document.getElementById('current-q').innerText = currentQ + 1;
         document.getElementById('question-text').innerText = quizData[currentQ].question;
+        
+        // Update Palette Focus
         document.querySelectorAll('.palette-btn').forEach(b => b.classList.remove('active'));
         document.getElementById('pal-' + currentQ).classList.add('active');
+        
+        // Render Options
         const optsContainer = document.getElementById('options-container');
         optsContainer.innerHTML = '';
+        
+        const hasAnswered = userAnswers[currentQ] !== null;
+        const correctAns = quizData[currentQ].answer;
+
         quizData[currentQ].options.forEach((opt, i) => {
             const label = document.createElement('label');
-            label.className = 'option-label' + (userAnswers[currentQ] === i ? ' selected' : '');
-            label.innerHTML = `<input type="radio" name="opt" onclick="selectOption(${i})"> ${opt}`;
+            label.className = 'option-label';
+            
+            // If already answered, show correct/wrong colors and disable clicks
+            if (hasAnswered) {
+                label.classList.add('disabled');
+                if (i === correctAns) {
+                    label.classList.add('correct');
+                    label.innerHTML = `${opt} <span style="float:right;">✅</span>`;
+                } else if (i === userAnswers[currentQ]) {
+                    label.classList.add('wrong');
+                    label.innerHTML = `${opt} <span style="float:right;">❌</span>`;
+                } else {
+                    label.innerHTML = opt;
+                }
+            } else {
+                label.innerHTML = `<input type="radio" name="opt" onclick="selectOption(${i})"> ${opt}`;
+            }
+            
             optsContainer.appendChild(label);
         });
+
+        // Toggle Explanation Box
+        const expBox = document.getElementById('explanation-box');
+        if (hasAnswered) {
+            expBox.style.display = 'block';
+            expBox.innerHTML = `<strong>Explanation:</strong> ${quizData[currentQ].explanation}`;
+        } else {
+            expBox.style.display = 'none';
+        }
+
         document.getElementById('prev-btn').disabled = (currentQ === 0);
         document.getElementById('next-btn').disabled = (currentQ === quizData.length - 1);
     }
 
     function selectOption(index) {
+        if (userAnswers[currentQ] !== null) return; // Prevent changing answer
+        
         userAnswers[currentQ] = index;
-        document.getElementById('pal-' + currentQ).classList.add('answered');
+        const isCorrect = (index === quizData[currentQ].answer);
+        
+        // Update Palette Color immediately
+        const palBtn = document.getElementById('pal-' + currentQ);
+        if (isCorrect) {
+            palBtn.classList.add('correct');
+        } else {
+            palBtn.classList.add('wrong');
+        }
+        
+        // Reload question to show colors and explanation
         loadQuestion(currentQ);
     }
 
@@ -160,36 +244,42 @@
     function prevQuestion() { if(currentQ > 0) loadQuestion(currentQ - 1); }
 
     function startTimer() {
+        // Using ~30fps for smooth millisecond countdown
         timerInterval = setInterval(() => {
-            timeLeft--;
-            let m = Math.floor(timeLeft / 60);
-            let s = timeLeft % 60;
-            document.getElementById('timer-display').innerText = `${m}:${s < 10 ? '0'+s : s}`;
-            if (timeLeft <= 0) { clearInterval(timerInterval); submitTest(true); }
-        }, 1000);
+            let now = Date.now();
+            let diff = endTime - now;
+            
+            if (diff <= 0) {
+                clearInterval(timerInterval);
+                document.getElementById('timer-display').innerText = "00:00:000";
+                alert("Time is up!");
+                submitTest();
+                return;
+            }
+
+            let m = Math.floor(diff / (1000 * 60));
+            let s = Math.floor((diff % (1000 * 60)) / 1000);
+            let ms = diff % 1000;
+
+            document.getElementById('timer-display').innerText = 
+                String(m).padStart(2, '0') + ":" + 
+                String(s).padStart(2, '0') + ":" + 
+                String(ms).padStart(3, '0');
+        }, 33); 
     }
 
-    function submitTest(auto = false) {
-        if(!auto && !confirm("Submit SALARIA Mock Test for Evaluation?")) return;
+    function submitTest() {
+        if(Date.now() < endTime && !confirm("Are you sure you want to end the practice session?")) return;
+        
         clearInterval(timerInterval);
         document.getElementById('test-wrapper').style.display = 'none';
         document.getElementById('result-screen').style.display = 'block';
+        
         let correct = 0;
-        const container = document.getElementById('review-container');
-        container.innerHTML = '';
         userAnswers.forEach((ans, i) => {
-            const isCorrect = (ans === quizData[i].answer);
-            if(isCorrect) correct++;
-            const item = document.createElement('div');
-            item.className = 'review-item';
-            item.innerHTML = `
-                <p><strong>Q${i+1}. ${quizData[i].question}</strong></p>
-                <p style="color:${isCorrect ? '#38a169' : '#e53e3e'}; font-weight:bold;">Your Answer: ${ans !== null ? quizData[i].options[ans] : 'Not Attempted'}</p>
-                <p style="color:#38a169; font-weight:bold;">Correct Answer: ${quizData[i].options[quizData[i].answer]}</p>
-                <div class="explanation"><strong>Explanation:</strong> ${quizData[i].explanation}</div>
-            `;
-            container.appendChild(item);
+            if (ans === quizData[i].answer) correct++;
         });
+        
         document.getElementById('final-score').innerText = `${correct} / ${quizData.length}`;
         window.scrollTo(0,0);
     }
