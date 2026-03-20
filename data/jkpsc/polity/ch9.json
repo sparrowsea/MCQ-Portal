@@ -1,0 +1,110 @@
+[
+    {
+        "question": "1. Which of the following are Fundamental Duties of an Indian citizen according to Article 51-A?\n1. Believe in socialism and secularism\n2. Respect the National Flag and National Anthem\n3. Protect sovereignty, unity and integrity\n4. Preserve rich heritage of composite culture\n5. Help the poor and weaker sections",
+        "options": ["(a) 1, 2 and 3", "(b) 2, 3 and 4", "(c) 3, 4 and 5", "(d) 1, 4 and 5"],
+        "answer": 1,
+        "explanation": "Specific duties mentioned are items 2, 3, and 4. Socialism/secularism (Preamble) and helping poor are not explicitly listed in Art 51A."
+    },
+    {
+        "question": "2. Which statements regarding Fundamental Duties are correct?\n1. Enforceable through writ jurisdiction.\n2. Part of Constitution since its adoption.\n3. Added on recommendations of Swaran Singh Committee.\n4. Applicable only to citizens.",
+        "options": ["(a) 1, 2 and 3", "(b) 1, 2 and 4", "(c) 2 and 3", "(d) 3 and 4"],
+        "answer": 3,
+        "explanation": "Duties are non-enforceable by writs and were added by 42nd Amendment in 1976."
+    },
+    {
+        "question": "3. Which have been prescribed as Fundamental Duties?\n1. Defend the country\n2. Pay income tax\n3. Preserve composite culture\n4. Safeguard public property",
+        "options": ["(a) 1 and 2", "(b) 2 and 4", "(c) 1, 2 and 4", "(d) 1, 3 and 4"],
+        "answer": 3,
+        "explanation": "Paying income tax is not a fundamental duty."
+    },
+    {
+        "question": "4. Which of the following is a fundamental duty of every citizen of India?",
+        "options": ["(a) Be truthful to duties", "(b) Renounce practices derogatory to children", "(c) Renounce practices derogatory to human beings", "(d) Renounce practices derogatory to the dignity of women"],
+        "answer": 3,
+        "explanation": "Article 51A(e) specifically mentions renouncing practices derogatory to women."
+    },
+    {
+        "question": "5. The 'Fundamental Duties' are intended to serve as a reminder to:",
+        "options": ["(a) The State", "(b) The judiciary", "(c) Every citizen to observe basic norms", "(d) The legislature"],
+        "answer": 2,
+        "explanation": "They serve as a moral obligation and reminder of responsibilities for citizens."
+    },
+    {
+        "question": "6. Which are included in the list of fundamental duties?\n1. Respect ideals and institutions\n2. Safeguard public property and abjure violence\n3. Protect sovereignty, unity and integrity\n4. Uphold and protect secularism",
+        "options": ["(a) 1, 3 and 4", "(b) 1, 2 and 4", "(c) 2, 3 and 4", "(d) 1, 2 and 3"],
+        "answer": 3,
+        "explanation": "Protecting 'secularism' is not an explicitly listed duty in Art 51A."
+    },
+    {
+        "question": "7. Respect for the National Flag and the National Anthem is:",
+        "options": ["(a) Fundamental right", "(b) Fundamental duty", "(c) Directive principle", "(d) Ordinary duty"],
+        "answer": 1,
+        "explanation": "It is the first fundamental duty listed under Art 51A(a)."
+    },
+    {
+        "question": "8. Consider the following statements:\n1. Protect sovereignty, unity and integrity\n2. Safeguard private property\n3. Protect environment including forests and rivers",
+        "options": ["(a) 1, 2 and 3 are correct", "(b) 1 and 2 are correct", "(c) 2 and 3 are correct", "(d) 1 and 3 are correct"],
+        "answer": 3,
+        "explanation": "Duty is to safeguard PUBLIC property, not private."
+    },
+    {
+        "question": "9. Fundamental duties were added on recommendations of:",
+        "options": ["(a) Santhannam Committee", "(b) Sarkaria Committee", "(c) Swaran Singh Committee", "(d) Indira Gandhi Committee"],
+        "answer": 2,
+        "explanation": "Swaran Singh Committee recommended their addition in 1976."
+    },
+    {
+        "question": "10. Which one has not been enumerated as a fundamental duty?",
+        "options": ["(a) Value heritage", "(b) Safeguard public property", "(c) Develop scientific temper", "(d) Secure a social order for welfare"],
+        "answer": 3,
+        "explanation": "Securing social order is a DPSP (Article 38)."
+    },
+    {
+        "question": "11. Which one of the following is not a fundamental duty?",
+        "options": ["(a) Respect National Anthem", "(b) Safeguard public property", "(c) Protect monuments of national importance", "(d) Protect natural environment"],
+        "answer": 2,
+        "explanation": "Protecting monuments is a DPSP under Article 49."
+    },
+    {
+        "question": "12. Consider the following statements regarding Fundamental duties:\n1. Always part of the Constitution\n2. Added through amendment\n3. Mandatory on all citizens",
+        "options": ["(a) 1 and 3", "(b) Only 1", "(c) Only 2", "(d) 2 and 3"],
+        "answer": 2,
+        "explanation": "They were added by the 42nd Amendment, 1976. They are not 'mandatory' in a legal sense unless supported by a law."
+    },
+    {
+        "question": "13. Which one is not a fundamental duty under Article 51-A?",
+        "options": ["(a) Render national service", "(b) Cast vote in elections", "(c) Strive for excellence", "(d) Develop scientific temper"],
+        "answer": 1,
+        "explanation": "Voting is a constitutional/statutory right but not a fundamental duty."
+    },
+    {
+        "question": "14. Among these, fundamental duties of citizens include:\n1. Develop scientific temper\n2. Promote brotherhood\n3. Organise village panchayats\n4. Minimize income inequalities\n5. Secure UCC\n6. Defend the country",
+        "options": ["(a) 1, 3 and 4", "(b) 3, 4 and 5", "(c) 1, 2 and 6", "(d) 2, 5 and 6"],
+        "answer": 2,
+        "explanation": "Items 3, 4, and 5 are Directive Principles."
+    },
+    {
+        "question": "15. Which one of the following is not included as a Fundamental Duty?",
+        "options": ["(a) Cherish ideals of struggle", "(b) Develop humanism", "(c) Protect minorities", "(d) Abjure violence"],
+        "answer": 2,
+        "explanation": "Protecting minorities is generally addressed in FRs (Art 29-30) and DPSPs."
+    },
+    {
+        "question": "16. Protection of lakes is an objective expressly stated in which one of the following?",
+        "options": ["(a) Fundamental Duties", "(b) Directive Principles of State Policy", "(c) Fundamental Rights", "(d) Eleventh Schedule"],
+        "answer": 0,
+        "explanation": "Art 51A(g) mentions protecting natural environment including lakes."
+    },
+    {
+        "question": "17. In which year were Fundamental Duties added?",
+        "options": ["(a) 1965", "(b) 1976", "(c) 1979", "(d) 1982"],
+        "answer": 1,
+        "explanation": "Added by the 42nd Amendment Act, 1976."
+    },
+    {
+        "question": "18. Which Articles relate to protection and improvement of environment?",
+        "options": ["(a) Article 48A only", "(b) Article 51A only", "(c) Both 48A and 51A", "(d) Neither"],
+        "answer": 2,
+        "explanation": "Art 48A (DPSP) and Art 51A(g) (Duty) both address environment."
+    }
+]
