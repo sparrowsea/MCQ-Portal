@@ -7,6 +7,31 @@
     <style>
         body { font-family: 'Segoe UI', sans-serif; background-color: #f0f4f8; margin: 0; padding-bottom: 50px; display: flex; flex-direction: column; align-items: center; }
         
+        /* LOGIN SCREEN STYLES */
+        #login-screen {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: #0a192f; display: flex; flex-direction: column; 
+            justify-content: center; align-items: center; z-index: 9999;
+        }
+        .login-box {
+            background: white; padding: 40px; border-radius: 10px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5); text-align: center; width: 300px;
+        }
+        .login-box h2 { color: #0a192f; margin-top: 0; letter-spacing: 2px; }
+        .login-box input {
+            width: 90%; padding: 10px; margin: 20px 0; border: 2px solid #cbd5e0; 
+            border-radius: 5px; font-size: 1.1rem; text-align: center; outline: none;
+        }
+        .login-box button {
+            width: 100%; padding: 12px; background: #007bff; color: white; 
+            border: none; border-radius: 5px; font-size: 1.1rem; font-weight: bold; cursor: pointer;
+        }
+        .login-box button:hover { background: #0056b3; }
+        #error-msg { color: #e53e3e; font-weight: bold; display: none; margin-bottom: 15px; }
+
+        /* MAIN APP STYLES (Hidden by default) */
+        #app-content { display: none; width: 100%; flex-direction: column; align-items: center; }
+
         .main-header { 
             width: 100%; background: #0a192f; color: #ffffff; text-align: center; padding: 30px 0; 
             font-size: 2.5rem; font-weight: bold; letter-spacing: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); 
@@ -46,109 +71,153 @@
 </head>
 <body>
 
-<div class="main-header">SALARIA</div>
-
-<div id="main-dashboard" class="main-wrapper">
-    <div style="width: 100%;">
-        
-        <h3 class="subject-title upsc-title">UPSC Mock Module</h3>
-        <div class="card-grid">
-            <div class="test-card upsc-card" onclick="startTest('upsc_mock/Forum/FLT-1(part1)')">
-                <h3 style="color:#d69e2e;">Forum FLT-1 (Part 1)</h3>
-                <p>Questions 1 to 30</p>
-                <button class="btn-start" style="background:#d69e2e;">Start</button>
-            </div>
-            <div class="test-card upsc-card" onclick="startTest('upsc_mock/Forum/FLT-1(part2)')">
-                <h3 style="color:#d69e2e;">Forum FLT-1 (Part 2)</h3>
-                <p>Questions 31 to 60</p>
-                <button class="btn-start" style="background:#d69e2e;">Start</button>
-            </div>
-            <div class="test-card upsc-card" onclick="startTest('upsc_mock/Forum/FLT-1(part3)')">
-                <h3 style="color:#d69e2e;">Forum FLT-1 (Part 3)</h3>
-                <p>Questions 61 to 100</p>
-                <button class="btn-start" style="background:#d69e2e;">Start</button>
-            </div>
-        </div>
-
-        <h3 class="subject-title jkpsc-title">JKPSC Module</h3>
-        <div class="card-grid">
-            <div class="test-card jkpsc-card" onclick="openPolityDashboard()">
-                <h3 style="color:#38a169;">Indian Polity</h3>
-                <p>Chapter-wise Tests</p>
-                <button class="btn-start" style="background:#38a169;">Open Modules</button>
-            </div>
-        </div>
-
-        <h3 class="subject-title jkssb-title">JKSSB Module</h3>
-        <div class="card-grid">
-            <div class="test-card jkssb-card" onclick="startTest('jkssb/computer/full')">
-                <h3 style="color:#e53e3e;">Computer Science</h3>
-                <p>50 Qs Bank</p>
-                <button class="btn-start" style="background:#e53e3e;">Start</button>
-            </div>
-        </div>
-
+<div id="login-screen">
+    <div class="login-box">
+        <h2>SALARIA</h2>
+        <p style="color: #718096; font-size: 0.9rem;">Master Revision Engine</p>
+        <div id="error-msg">Incorrect Password</div>
+        <input type="password" id="pass-input" placeholder="Enter Password" onkeypress="handleEnter(event)">
+        <button onclick="checkPassword()">Access Portal</button>
     </div>
 </div>
 
-<div id="polity-dashboard" class="main-wrapper" style="display:none;">
-    <div style="width: 100%;">
-        <h3 class="subject-title jkpsc-title" style="border-bottom-color:#805ad5;">
-            Polity Chapters 
-            <button onclick="location.reload()" style="float:right; padding:5px 15px; cursor:pointer; background:#2d3748; color:white; border:none; border-radius:5px;">← Back</button>
-        </h3>
-        <div class="card-grid" id="polity-chapters-grid"></div>
-    </div>
-</div>
+<div id="app-content">
 
-<div id="test-wrapper">
-    <div class="quiz-container">
-        <div style="display:flex; justify-content:space-between; align-items:center; border-bottom: 2px solid #eee; padding-bottom: 10px; margin-bottom: 20px;">
-            <h3 id="quiz-title" style="margin:0;">Active Session</h3>
-            <div id="timer" style="font-family:monospace; font-size:1.5rem; color:#e53e3e; background:#fff5f5; padding:5px 10px; border-radius:5px; border: 1px solid #feb2b2;">00:00</div>
-        </div>
-        <p style="color:#718096; font-weight:bold;">Question <span id="q-num">1</span> of <span id="total-qs-count">0</span></p>
-        <h2 id="q-text" style="font-size: 1.2rem; line-height: 1.5; color:#2d3748;"></h2>
-        <div id="options"></div>
-        <div id="explanation" style="display:none; background:#fffaf0; padding:15px; border-left:4px solid #ed8936; margin-top:20px; font-size:0.95rem; line-height:1.6;"></div>
-        
-        <div style="display:flex; gap:10px; margin-top:25px;">
-            <button onclick="prevQ()" style="flex:1; padding:12px; font-weight:bold; cursor:pointer; background:#4a5568; color:white; border:none; border-radius:5px;">Previous</button>
-            <button onclick="nextQ()" style="flex:1; padding:12px; font-weight:bold; cursor:pointer; background:#4a5568; color:white; border:none; border-radius:5px;">Next</button>
-        </div>
-        <button onclick="submitTest()" style="width:100%; margin-top:15px; padding:12px; background:#e53e3e; color:white; border:none; border-radius:5px; font-weight:bold; cursor:pointer;">End Session</button>
-    </div>
-    <div class="sidebar">
-        <h3 style="margin-top:0; text-align:center;">Question Tracker</h3>
-        <div class="palette-grid" id="palette"></div>
-    </div>
-</div>
+    <div class="main-header">SALARIA</div>
 
-<div id="result-screen" class="main-wrapper" style="display:none; text-align:center;">
-    <div style="background:white; padding:40px; border-radius:15px; width:100%; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-        <h1 style="color:#2d3748;">Session Completed</h1>
-        
-        <div style="background:#ebf8ff; padding:30px; border-radius:10px; border:1px solid #bee3f8; margin: 20px 0;">
-            <h2 id="final-score" style="font-size:3.5rem; color:#2b6cb0; margin:0;"></h2>
+    <div id="main-dashboard" class="main-wrapper">
+        <div style="width: 100%;">
             
-            <div style="display:flex; justify-content:center; gap:20px; margin-top:20px; font-size:1.2rem; flex-wrap:wrap;">
-                <div style="background:#c6f6d5; padding:10px 20px; border-radius:8px; color:#22543d;">
-                    <strong>Correct:</strong> <span id="correct-count">0</span>
+            <h3 class="subject-title upsc-title">UPSC Mock Module</h3>
+            <div class="card-grid">
+                <div class="test-card upsc-card" onclick="startTest('upsc_mock/Forum/FLT-1(part1)')">
+                    <h3 style="color:#d69e2e;">Forum FLT-1 (Part 1)</h3>
+                    <p>Questions 1 to 30</p>
+                    <button class="btn-start" style="background:#d69e2e;">Start</button>
                 </div>
-                <div style="background:#fed7d7; padding:10px 20px; border-radius:8px; color:#742a2a;">
-                    <strong>Incorrect:</strong> <span id="incorrect-count">0</span>
+                <div class="test-card upsc-card" onclick="startTest('upsc_mock/Forum/FLT-1(part2)')">
+                    <h3 style="color:#d69e2e;">Forum FLT-1 (Part 2)</h3>
+                    <p>Questions 31 to 60</p>
+                    <button class="btn-start" style="background:#d69e2e;">Start</button>
                 </div>
-                <div style="background:#edf2f7; padding:10px 20px; border-radius:8px; color:#2d3748;">
-                    <strong>Unattempted:</strong> <span id="unattempted-count">0</span>
+                <div class="test-card upsc-card" onclick="startTest('upsc_mock/Forum/FLT-1(part3)')">
+                    <h3 style="color:#d69e2e;">Forum FLT-1 (Part 3)</h3>
+                    <p>Questions 61 to 100</p>
+                    <button class="btn-start" style="background:#d69e2e;">Start</button>
                 </div>
             </div>
+
+            <h3 class="subject-title jkpsc-title">JKPSC Module</h3>
+            <div class="card-grid">
+                <div class="test-card jkpsc-card" onclick="openPolityDashboard()">
+                    <h3 style="color:#38a169;">Indian Polity</h3>
+                    <p>Chapter-wise Tests</p>
+                    <button class="btn-start" style="background:#38a169;">Open Modules</button>
+                </div>
+            </div>
+
+            <h3 class="subject-title jkssb-title">JKSSB Module</h3>
+            <div class="card-grid">
+                <div class="test-card jkssb-card" onclick="startTest('jkssb/computer/full')">
+                    <h3 style="color:#e53e3e;">Computer Science</h3>
+                    <p>50 Qs Bank</p>
+                    <button class="btn-start" style="background:#e53e3e;">Start</button>
+                </div>
+            </div>
+
         </div>
-        
-        <button onclick="location.reload()" style="padding:15px 30px; font-size:1.1rem; background:#2d3748; color:white; border:none; border-radius:8px; cursor:pointer;">Back to Dashboard</button>
     </div>
+
+    <div id="polity-dashboard" class="main-wrapper" style="display:none;">
+        <div style="width: 100%;">
+            <h3 class="subject-title jkpsc-title" style="border-bottom-color:#805ad5;">
+                Polity Chapters 
+                <button onclick="location.reload()" style="float:right; padding:5px 15px; cursor:pointer; background:#2d3748; color:white; border:none; border-radius:5px;">← Back</button>
+            </h3>
+            <div class="card-grid" id="polity-chapters-grid"></div>
+        </div>
+    </div>
+
+    <div id="test-wrapper">
+        <div class="quiz-container">
+            <div style="display:flex; justify-content:space-between; align-items:center; border-bottom: 2px solid #eee; padding-bottom: 10px; margin-bottom: 20px;">
+                <h3 id="quiz-title" style="margin:0;">Active Session</h3>
+                <div id="timer" style="font-family:monospace; font-size:1.5rem; color:#e53e3e; background:#fff5f5; padding:5px 10px; border-radius:5px; border: 1px solid #feb2b2;">00:00</div>
+            </div>
+            <p style="color:#718096; font-weight:bold;">Question <span id="q-num">1</span> of <span id="total-qs-count">0</span></p>
+            <h2 id="q-text" style="font-size: 1.2rem; line-height: 1.5; color:#2d3748;"></h2>
+            <div id="options"></div>
+            <div id="explanation" style="display:none; background:#fffaf0; padding:15px; border-left:4px solid #ed8936; margin-top:20px; font-size:0.95rem; line-height:1.6;"></div>
+            
+            <div style="display:flex; gap:10px; margin-top:25px;">
+                <button onclick="prevQ()" style="flex:1; padding:12px; font-weight:bold; cursor:pointer; background:#4a5568; color:white; border:none; border-radius:5px;">Previous</button>
+                <button onclick="nextQ()" style="flex:1; padding:12px; font-weight:bold; cursor:pointer; background:#4a5568; color:white; border:none; border-radius:5px;">Next</button>
+            </div>
+            <button onclick="submitTest()" style="width:100%; margin-top:15px; padding:12px; background:#e53e3e; color:white; border:none; border-radius:5px; font-weight:bold; cursor:pointer;">End Session</button>
+        </div>
+        <div class="sidebar">
+            <h3 style="margin-top:0; text-align:center;">Question Tracker</h3>
+            <div class="palette-grid" id="palette"></div>
+        </div>
+    </div>
+
+    <div id="result-screen" class="main-wrapper" style="display:none; text-align:center;">
+        <div style="background:white; padding:40px; border-radius:15px; width:100%; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+            <h1 style="color:#2d3748;">Session Completed</h1>
+            
+            <div style="background:#ebf8ff; padding:30px; border-radius:10px; border:1px solid #bee3f8; margin: 20px 0;">
+                <h2 id="final-score" style="font-size:3.5rem; color:#2b6cb0; margin:0;"></h2>
+                
+                <div style="display:flex; justify-content:center; gap:20px; margin-top:20px; font-size:1.2rem; flex-wrap:wrap;">
+                    <div style="background:#c6f6d5; padding:10px 20px; border-radius:8px; color:#22543d;">
+                        <strong>Correct:</strong> <span id="correct-count">0</span>
+                    </div>
+                    <div style="background:#fed7d7; padding:10px 20px; border-radius:8px; color:#742a2a;">
+                        <strong>Incorrect:</strong> <span id="incorrect-count">0</span>
+                    </div>
+                    <div style="background:#edf2f7; padding:10px 20px; border-radius:8px; color:#2d3748;">
+                        <strong>Unattempted:</strong> <span id="unattempted-count">0</span>
+                    </div>
+                </div>
+            </div>
+            
+            <button onclick="location.reload()" style="padding:15px 30px; font-size:1.1rem; background:#2d3748; color:white; border:none; border-radius:8px; cursor:pointer;">Back to Dashboard</button>
+        </div>
+    </div>
+
 </div>
 
 <script>
+    // ==========================================
+    // PASSWORD LOGIC
+    // ==========================================
+    const SECRET_PASSWORD = "Chakit"; // <-- CHANGE YOUR PASSWORD HERE
+
+    // Check if user already logged in during this browser session
+    if(sessionStorage.getItem("loggedIn") === "true") {
+        document.getElementById("login-screen").style.display = "none";
+        document.getElementById("app-content").style.display = "flex";
+    }
+
+    function checkPassword() {
+        const input = document.getElementById('pass-input').value;
+        if(input === SECRET_PASSWORD) {
+            sessionStorage.setItem("loggedIn", "true"); // Keeps them logged in until they close the tab
+            document.getElementById('login-screen').style.display = 'none';
+            document.getElementById('app-content').style.display = 'flex';
+        } else {
+            document.getElementById('error-msg').style.display = 'block';
+            document.getElementById('pass-input').value = '';
+        }
+    }
+
+    // Allow pressing "Enter" to submit password
+    function handleEnter(e) {
+        if(e.key === 'Enter') {
+            checkPassword();
+        }
+    }
+
     // ==========================================
     // DATA CONFIGURATION: LOADED CHAPTERS
     // ==========================================
@@ -175,7 +244,7 @@
         document.getElementById('test-wrapper').style.display = 'flex';
         document.getElementById('q-text').innerText = "Establishing connection to database...";
 
-        // CACHE BUSTING: The "?v=timestamp" forces the browser to download the new file every time
+        // CACHE BUSTING
         const fileUrl = 'data/' + path + '.json?v=' + new Date().getTime();
         
         try {
@@ -198,7 +267,7 @@
             timerInterval = setInterval(updateTimer, 1000);
             showQ(0);
         } catch(e) {
-            alert("⚠️ SYSTEM ERROR\n\nCould not load: data/" + path + ".json\n\nMake sure the file exists and the folder name matches exactly (including spaces and capital letters).");
+            alert("⚠️ SYSTEM ERROR\n\nCould not load: data/" + path + ".json\n\nMake sure the file exists and the folder name matches exactly.");
             location.reload();
         }
     }
