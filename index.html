@@ -16,12 +16,14 @@
         .subject-title { font-size: 1.8rem; color: #2c3e50; border-bottom: 3px solid #007bff; padding-bottom: 10px; margin-top: 30px; width: 100%;}
         .jkssb-title { border-bottom-color: #e53e3e; }
         .jkpsc-title { border-bottom-color: #38a169; }
+        .upsc-title { border-bottom-color: #d69e2e; }
 
         .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 15px; width: 100%; }
         .test-card { background: #fff; padding: 25px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); text-align: center; cursor: pointer; border-top: 4px solid #007bff; transition: transform 0.2s;}
         .test-card:hover { transform: translateY(-3px); box-shadow: 0 6px 15px rgba(0,0,0,0.15); }
         .test-card.jkssb-card { border-top-color: #e53e3e; }
         .test-card.jkpsc-card { border-top-color: #38a169; }
+        .test-card.upsc-card { border-top-color: #d69e2e; }
         
         .test-card h3 { margin: 0 0 10px 0; font-size: 1.3rem; color: #2d3748; }
         .btn-start { background: #2d3748; color: white; padding: 10px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; width: 100%; margin-top: 10px;}
@@ -49,21 +51,30 @@
 <div id="main-dashboard" class="main-wrapper">
     <div style="width: 100%;">
         
-        <h3 class="subject-title jkssb-title">JKSSB Module</h3>
+        <h3 class="subject-title upsc-title">UPSC Mock Module</h3>
         <div class="card-grid">
-            <div class="test-card jkssb-card" onclick="startTest('jkssb/computer/full')">
-                <h3>Computer Science</h3>
-                <p>50 Qs Bank</p>
-                <button class="btn-start">Start</button>
+            <div class="test-card upsc-card" onclick="startTest('upsc_mock/Forum/FLT-1(part1)')">
+                <h3 style="color:#d69e2e;">Forum FLT-1</h3>
+                <p>Questions 1 to 30</p>
+                <button class="btn-start" style="background:#d69e2e;">Start</button>
             </div>
         </div>
 
         <h3 class="subject-title jkpsc-title">JKPSC Module</h3>
         <div class="card-grid">
             <div class="test-card jkpsc-card" onclick="openPolityDashboard()">
-                <h3>Indian Polity</h3>
+                <h3 style="color:#38a169;">Indian Polity</h3>
                 <p>Chapter-wise Tests</p>
-                <button class="btn-start">Open Modules</button>
+                <button class="btn-start" style="background:#38a169;">Open Modules</button>
+            </div>
+        </div>
+
+        <h3 class="subject-title jkssb-title">JKSSB Module</h3>
+        <div class="card-grid">
+            <div class="test-card jkssb-card" onclick="startTest('jkssb/computer/full')">
+                <h3 style="color:#e53e3e;">Computer Science</h3>
+                <p>50 Qs Bank</p>
+                <button class="btn-start" style="background:#e53e3e;">Start</button>
             </div>
         </div>
 
@@ -74,7 +85,7 @@
     <div style="width: 100%;">
         <h3 class="subject-title jkpsc-title" style="border-bottom-color:#805ad5;">
             Polity Chapters 
-            <button onclick="location.reload()" style="float:right; padding:5px 15px; cursor:pointer;">← Back</button>
+            <button onclick="location.reload()" style="float:right; padding:5px 15px; cursor:pointer; background:#2d3748; color:white; border:none; border-radius:5px;">← Back</button>
         </h3>
         <div class="card-grid" id="polity-chapters-grid"></div>
     </div>
@@ -89,7 +100,7 @@
         <p style="color:#718096; font-weight:bold;">Question <span id="q-num">1</span> of <span id="total-qs-count">0</span></p>
         <h2 id="q-text" style="font-size: 1.2rem; line-height: 1.5; color:#2d3748;"></h2>
         <div id="options"></div>
-        <div id="explanation" style="display:none; background:#fffaf0; padding:15px; border-left:4px solid #ed8936; margin-top:20px; font-size:0.95rem;"></div>
+        <div id="explanation" style="display:none; background:#fffaf0; padding:15px; border-left:4px solid #ed8936; margin-top:20px; font-size:0.95rem; line-height:1.6;"></div>
         
         <div style="display:flex; gap:10px; margin-top:25px;">
             <button onclick="prevQ()" style="flex:1; padding:12px; font-weight:bold; cursor:pointer; background:#4a5568; color:white; border:none; border-radius:5px;">Previous</button>
@@ -115,13 +126,12 @@
 
 <script>
     // ==========================================
-    // DATA CONFIGURATION: ONLY ADD LOADED CHAPTERS HERE
+    // DATA CONFIGURATION: LOADED CHAPTERS
     // ==========================================
     const availablePolityChapters = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
     
     let questions = [], currentIdx = 0, answers = [], end, timerInterval;
 
-    // Generate only the buttons for chapters that exist in the array above
     function openPolityDashboard() {
         document.getElementById('main-dashboard').style.display = 'none';
         document.getElementById('polity-dashboard').style.display = 'flex';
@@ -164,7 +174,7 @@
             timerInterval = setInterval(updateTimer, 1000);
             showQ(0);
         } catch(e) {
-            alert("⚠️ SYSTEM ERROR\n\nCould not load: data/" + path + ".json\n\nMake sure the file exists and is formatted correctly.");
+            alert("⚠️ SYSTEM ERROR\n\nCould not load: data/" + path + ".json\n\nMake sure the file exists and the folder name matches exactly (including spaces and capital letters).");
             location.reload();
         }
     }
@@ -195,7 +205,7 @@
         
         const expDiv = document.getElementById('explanation');
         expDiv.style.display = answered ? 'block' : 'none';
-        if(answered) expDiv.innerHTML = "<strong>Explanation:</strong> " + q.explanation;
+        if(answered) expDiv.innerHTML = "<strong>Explanation:</strong><br>" + q.explanation;
         
         document.querySelectorAll('.palette-btn').forEach(b => b.classList.remove('active'));
         document.getElementById('pal-'+idx).classList.add('active');
