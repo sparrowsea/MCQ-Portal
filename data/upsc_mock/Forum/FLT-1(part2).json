@@ -1,0 +1,332 @@
+[
+    {
+        "question": "31. With reference to India's fiscal policy framework, consider the following statements:\nStatement I: The Government of India plans to shift to Debt-to-GDP ratio from the currently used fiscal deficit as the measure of its fiscal consolidation/fiscal prudence.\nStatement II: Debt-to-GDP ratio is a more comprehensive indicator of fiscal health, as it reflects the cumulative impact of past and present borrowing and fiscal decisions, rather than only the deficit incurred in a single year.\nWhich one of the following is correct in respect of the above statements?",
+        "options": [
+            "(a) Both Statement I and Statement II are correct and Statement II explains Statement I",
+            "(b) Both Statement I and Statement II are correct but Statement II does not explain Statement I",
+            "(c) Statement I is correct but Statement II is not correct",
+            "(d) Statement I is not correct but Statement II is correct"
+        ],
+        "answer": 0,
+        "explanation": "Option a is the correct answer. Statement I is correct: The Government of India intends to shift the operational fiscal anchor from the fiscal deficit to the debt-to-GDP ratio as part of its fiscal consolidation strategy. Statement II is correct: The debt-to-GDP ratio measures the total outstanding government debt as a proportion of the size of the economy, reflecting the cumulative outcome of past and present borrowing. Why Statement II explains Statement I: Because the debt-to-GDP ratio captures the overall debt burden accumulated over time, it is viewed internationally as a better fiscal anchor for assessing fiscal prudence."
+    },
+    {
+        "question": "32. Consider the following statements:\nStatement I: An increase in the percentage share of gold in India's total foreign exchange reserves held by the RBI necessarily leads to appreciation of the Indian Rupee.\nStatement II: Gold is considered a safe-haven reserve asset and diversification of foreign exchange reserves into gold reduces exposure to fluctuations in major foreign currencies such as the US dollar.\nWhich one of the following is correct in respect of the above statements?",
+        "options": [
+            "(a) Both Statement I and Statement II are correct and Statement II explains Statement I",
+            "(b) Both Statement I and Statement II are correct but Statement II does not explain Statement I",
+            "(c) Statement I is correct but Statement II is not correct",
+            "(d) Statement I is not correct but Statement II is correct"
+        ],
+        "answer": 3,
+        "explanation": "Option d is the correct answer. Statement I is incorrect: An increase in the percentage share of gold in India's foreign exchange reserves does not necessarily lead to appreciation of the Indian rupee. The value of the rupee is primarily determined by demand and supply of foreign currency. Statement II is correct: Gold is widely regarded as a safe-haven reserve asset. Central banks hold gold as it helps diversify foreign exchange reserves and reduces excessive dependence on major reserve currencies such as the US dollar."
+    },
+    {
+        "question": "33. With reference to Stablecoins, consider the following statements:\nI. These are blockchain-based digital assets designed to maintain a relatively consistent value over time.\nII. These are typically pegged to assets such as fiat currencies (e.g., US Dollar), commodities (e.g., gold), or a basket of assets.\nIII. In India, gains arising from transfer of stablecoins are subject to a flat tax rate under the provisions applicable to Virtual Digital Assets.\nWhich of the statements given above are correct?",
+        "options": [
+            "(a) I and III only",
+            "(b) I and II only",
+            "(c) II and III only",
+            "(d) I, II and III"
+        ],
+        "answer": 3,
+        "explanation": "Option d is the correct answer. Statement I is correct: Stablecoins are a type of blockchain-based digital asset created with the objective of maintaining a relatively stable value over time. Statement II is correct: To maintain stability, the value of stablecoins is typically pegged to external assets. Statement III is correct: In India, stablecoins are treated as part of the broader category of Virtual Digital Assets (VDAs) for taxation purposes. Income arising from the transfer of VDAs is taxed at a flat rate of 30%."
+    },
+    {
+        "question": "34. With reference to Indian philosophy, consider the following doctrines:\nI. Sunyavada\nII. Anekantavada\nIII. Kshanika-vada\nIV. Nityavada\nHow many of the above doctrines primarily belong to Buddhism?",
+        "options": [
+            "(a) Only one",
+            "(b) Only two",
+            "(c) Only three",
+            "(d) All the four"
+        ],
+        "answer": 1,
+        "explanation": "Option b is the correct answer. Option I is correct: Sunyavada (Doctrine of Emptiness) is a central philosophical concept of Buddhism. Option II is incorrect: Anekantavada (Doctrine of Non-absolutism or many-sided reality) is a key philosophical principle of Jainism. Option III is correct: Kshanika-vada (Doctrine of Momentariness) is another important doctrine of Buddhism supporting the concept of impermanence (Anitya). Option IV is incorrect: Nityavada refers to the doctrine of eternal and unchanging reality, associated with Vedanta within Hinduism. Thus, only two belong to Buddhism."
+    },
+    {
+        "question": "35. With reference to archaeological sites in India, consider the following information:\nI. Poompuhar - Tamil Nadu - Ancient port city of the Chola Empire mentioned in Sangam literature.\nII. Piprahwa - Uttar Pradesh - Site of an ancient stupa where relics linked to the Buddha were discovered\nIII. Hire Benakal - Karnataka - Megalithic site famous for numerous dolmens and burial monuments\nIV. Rangpur - Punjab - Harappan site known for evidence of rice cultivation\nIn how many of the above rows is the information correctly matched?",
+        "options": [
+            "(a) Only one",
+            "(b) Only two",
+            "(c) Only three",
+            "(d) All the four"
+        ],
+        "answer": 2,
+        "explanation": "Option c is the correct answer. Information in row I is correct: Poompuhar is located in Tamil Nadu and was an important port city of the early Cholas. Information in row II is correct: Piprahwa is located in Uttar Pradesh, associated with ancient Kapilavastu. Information in row III is correct: Hire Benakal in Karnataka is one of the largest megalithic burial sites in India. Information in row IV is incorrect: Rangpur is a Harappan site in Gujarat (not Punjab) known for evidence of rice cultivation."
+    },
+    {
+        "question": "36. Basavanna, the founder of the Virashaiva (Lingayat) movement, served as a minister in the court of which of the following rulers?",
+        "options": [
+            "(a) Rajaraja I of the Chola Dynasty",
+            "(b) Vishnuvardhana of the Hoysala Dynasty",
+            "(c) Bijjala of the Kalachuri Dynasty",
+            "(d) Vikramaditya VI of the Chalukya Dynasty"
+        ],
+        "answer": 2,
+        "explanation": "Option c is the correct answer. Basavanna (also known as Basaveshwara) was a 12th-century social reformer, poet-saint, and the founder of the Virashaiva (Lingayat) movement in Karnataka. Basavanna served as a minister (Mahamantri) in the court of Bijjala, a ruler of the Kalachuri Dynasty of Kalyani in north Karnataka (12th century CE)."
+    },
+    {
+        "question": "37. With reference to the Wood's Education Despatch (1854), consider the following statements:\nI. It recommended English as the medium of instruction for primary, secondary and college education.\nII. It rejected the 'Downward Filtration Theory' of educating people and advocated the spread of education among the masses.\nIII. It recommended the establishment of universities in the Presidency towns of Calcutta, Bombay and Madras.\nWhich of the statements given above is/are correct?",
+        "options": [
+            "(a) I and II only",
+            "(b) III only",
+            "(c) II and III only",
+            "(d) I, II and III"
+        ],
+        "answer": 2,
+        "explanation": "Option c is the correct answer. Statement I is incorrect: The Wood's Education Despatch did not recommend English at all levels. It stated that vernacular languages should be the medium of instruction at the primary level. Statement II is correct: Wood's Despatch rejected the Downward Filtration Theory, emphasizing that the government should take responsibility for the education of the masses. Statement III is correct: It recommended the establishment of universities in the Presidency towns of Calcutta, Bombay and Madras."
+    },
+    {
+        "question": "38. Consider the following statements:\nI. Rekha-prasad, Phamsana and Valabhi are different types of Garbhagriha in the Dravida style of temple architecture.\nII. A large entrance gateway known as Gopuram in the front wall of the temple was a characteristic feature of the Nagara style of temple architecture.\nWhich of the statements given above is/are correct?",
+        "options": [
+            "(a) I only",
+            "(b) II only",
+            "(c) Both I and II",
+            "(d) Neither I nor II"
+        ],
+        "answer": 3,
+        "explanation": "Option d is the correct answer. Statement I is incorrect: Rekha-prasad, Phamsana and Valabhi are types of Shikhara (superstructure) in the Nagara style of temple architecture, not Dravida Garbhagrihas. Statement II is incorrect: A large entrance gateway known as a Gopuram is a characteristic feature of the Dravida architecture, particularly in temples of Tamil Nadu. The Nagara architecture generally does not feature prominent gopurams."
+    },
+    {
+        "question": "39. With reference to the World Gold Council, frequently mentioned in the news, consider the following statements:\nI. It is an organization with members from sovereign nations, corporations and major international financial organizations.\nII. No Indian gold mining company is currently a member of the World Gold Council.\nWhich of the statements given above is/are correct?",
+        "options": [
+            "(a) I only",
+            "(b) II only",
+            "(c) Both I and II",
+            "(d) Neither I nor II"
+        ],
+        "answer": 1,
+        "explanation": "Option b is the correct answer. Statement I is incorrect: The World Gold Council is not an intergovernmental organisation. It is a market development organisation/industry association formed by leading gold mining companies. Statement II is correct: Membership consists mainly of major global gold-mining companies. No Indian company is currently a member of the Council because India is a major consumer but not a major global gold-mining producer."
+    },
+    {
+        "question": "40. Which one of the following was the latest property from India to be inscribed on the World Heritage List of UNESCO?",
+        "options": [
+            "(a) Maratha Military Landscapes of India",
+            "(b) Sacred Ensembles of the Hoysalas",
+            "(c) Moidams - the Mound-Burial System of the Ahom Dynasty",
+            "(d) Santiniketan"
+        ],
+        "answer": 0,
+        "explanation": "Option a is the correct answer. The latest property from India to be inscribed on the World Heritage List of UNESCO is Maratha Military Landscapes of India, which was included in 2025 during the 47th session of the World Heritage Committee. It became India's 44th UNESCO World Heritage Site."
+    },
+    {
+        "question": "41. Consider the following statements:\nStatement I: Since 2011, Syria has been witnessing a prolonged civil war which has evolved into a major geopolitical conflict involving multiple foreign powers.\nStatement II: In 2011, the President of Syria was removed from office through a military coup, leading to the establishment of an interim military administration.\nWhich one of the following is correct in respect of the above statements?",
+        "options": [
+            "(a) Both Statement I and Statement II are correct and Statement II explains Statement I",
+            "(b) Both Statement I and Statement II are correct but Statement II does not explain Statement I",
+            "(c) Statement I is correct but Statement II is not correct",
+            "(d) Statement I is not correct but Statement II is correct"
+        ],
+        "answer": 2,
+        "explanation": "Option c is the correct answer. Statement I is correct: Since 2011, Syria has been experiencing a prolonged civil war that began during the Arab Spring which evolved into a major geopolitical conflict. Statement II is incorrect: In 2011, the President of Syria was not removed through a military coup. Bashar al-Assad continued to remain in power while the country descended into civil war. He was removed from power when rebels overthrew his regime much later in December 2024."
+    },
+    {
+        "question": "42. With reference to monetary policy in India, consider the following statements:\nStatement I: A reduction in the Cash Reserve Ratio (CRR) by the Reserve Bank of India may induce commercial banks to lower their lending interest rates.\nStatement II: A decrease in the Cash Reserve Ratio increases the lendable resources available with commercial banks.\nWhich one of the following is correct in respect of the above statements?",
+        "options": [
+            "(a) Both Statement I and Statement II are correct and Statement II explains Statement I",
+            "(b) Both Statement I and Statement II are correct but Statement II does not explain Statement I",
+            "(c) Statement I is correct but Statement II is not correct",
+            "(d) Statement I is not correct but Statement II is correct"
+        ],
+        "answer": 0,
+        "explanation": "Option a is the correct answer. Statement I is correct: A reduction in CRR may induce commercial banks to lower their lending interest rates to expand credit demand. Statement II is correct: CRR refers to the percentage of a bank's NDTL maintained with the RBI in cash. A reduction directly increases the funds available with banks for lending. How Statement II Explains Statement I: A decrease in CRR increases lendable resources with banks, which enhances liquidity and may lead to a reduction in lending interest rates."
+    },
+    {
+        "question": "43. With reference to the Motion of Thanks on the President's Address in the Indian Parliament, consider the following statements:\nI. The Motion of Thanks is moved separately in both Houses of Parliament after the President's Address at the commencement of the first session of each year.\nII. Amendments to the Motion of Thanks can be moved only in the Lok Sabha and not in the Rajya Sabha.\nIII. The discussion on the Motion of Thanks is generally concluded by the reply of the Prime Minister in both Houses.\nWhich of the statements given above is/are correct?",
+        "options": [
+            "(a) I and II only",
+            "(b) III only",
+            "(c) I and III only",
+            "(d) I, II and III"
+        ],
+        "answer": 2,
+        "explanation": "Option c is the correct answer. Statement I is correct: After the President addresses both Houses assembled together, a Motion of Thanks is moved separately in each House. Statement II is incorrect: Amendments to the Motion of Thanks can be moved in both Houses of Parliament, not only in the Lok Sabha. Statement III is correct: The discussion on the Motion of Thanks is concluded by the reply of the Prime Minister or any other Minister."
+    },
+    {
+        "question": "44. With reference to a Constitutional Amendment Bill under Article 368 of the Constitution of India, consider the following statements:\nI. It can be introduced in the Parliament only with the prior recommendation of the President.\nII. In case of a disagreement between the Lok Sabha and the Rajya Sabha on such a Bill, the President may summon a joint sitting of both Houses to resolve the deadlock.\nIII. The President of India is bound to give assent to a Constitution Amendment Bill duly passed by both Houses of the Parliament.\nWhich of the statements given above is/are correct?",
+        "options": [
+            "(a) I only",
+            "(b) I and III only",
+            "(c) III only",
+            "(d) I, II and III"
+        ],
+        "answer": 2,
+        "explanation": "Option c is the correct answer. Statement I is incorrect: A Constitution Amendment Bill under Article 368 does not require prior recommendation of the President for its introduction. Statement II is incorrect: No provision exists for a joint sitting for a Constitution Amendment Bill. Statement III is correct: The President is bound to give assent to a Constitutional Amendment Bill once it is duly passed by Parliament (made mandatory by the 24th Amendment Act, 1971)."
+    },
+    {
+        "question": "45. Consider the following statements regarding the proclamation of the President's Rule in a State:\nI. The State of Punjab has experienced the imposition of President's Rule the maximum number of times among all the States in India.\nII. During the operation of President's Rule, the President may declare that the powers of the State Legislature shall be exercisable by or under the authority of Parliament.\nIII. President's Rule in a state can be extended beyond three years if the Election Commission of India certifies that it is necessary due to difficulties in conducting elections to the State Legislative Assembly.\nWhich of the statements given above is/are correct?",
+        "options": [
+            "(a) I, II and III",
+            "(b) I and II only",
+            "(c) II only",
+            "(d) I and III only"
+        ],
+        "answer": 2,
+        "explanation": "Option c is the correct answer. Statement I is incorrect: While Punjab was the first state to see President's Rule (1951), Manipur has seen it the maximum number of times (11 times), followed by Uttar Pradesh (10 times). Statement II is correct: The President may declare that the powers of the State Legislature shall be exercisable by or under the authority of Parliament. Statement III is incorrect: The Constitution permits the President's Rule to continue for a maximum period of three years. Extensions beyond one year require EC certification, but three years is the absolute maximum limit."
+    },
+    {
+        "question": "46. Consider the following statements:\nStatement I: Western Ghats have been categorised as a natural site of 'significant concern' under the International Union for Conservation of Nature (IUCN) World Heritage Outlook 4 report.\nStatement II: The Western Ghats have Outstanding Universal Value which influences large-scale biophysical and ecological processes over the entire Indian peninsula.\nWhich one of the following is correct in respect of the above statements?",
+        "options": [
+            "(a) Both Statement I and Statement II are correct and Statement II explains Statement I",
+            "(b) Both Statement I and Statement II are correct but Statement II does not explain Statement I",
+            "(c) Statement I is correct but Statement II is not correct",
+            "(d) Statement I is not correct but Statement II is correct"
+        ],
+        "answer": 1,
+        "explanation": "Option b is the correct answer. Statement I is correct: The Western Ghats have been placed in the category of 'Significant Concern' indicating natural values are under considerable pressure. Statement II is correct: The Western Ghats were inscribed as a natural World Heritage Site because of their Outstanding Universal Value (OUV) influencing large-scale biophysical processes. However, Statement II does not explain Statement I. Statement II explains why it was recognized as a heritage site, not why it is currently under 'Significant Concern'."
+    },
+    {
+        "question": "47. Consider the following statements:\nStatement I: There has been a significant humanitarian crisis and large-scale displacement of civilians along the Thailand-Cambodia border recently.\nStatement II: Thailand and Cambodia have a long-standing border dispute, including competing claims over areas surrounding a medieval era Temple.\nWhich one of the following is correct in respect of the above statements?",
+        "options": [
+            "(a) Both Statement I and Statement II are correct and Statement II explains Statement I",
+            "(b) Both Statement I and Statement II are correct but Statement II does not explain Statement I",
+            "(c) Statement I is correct but Statement II is not correct",
+            "(d) Statement I is not correct but Statement II is correct"
+        ],
+        "answer": 0,
+        "explanation": "Option a is the correct answer. Statement I is correct: Armed confrontations along the border between Thailand and Cambodia have resulted in civilian displacement. Statement II is correct: A major point of contention has been the territory surrounding the Preah Vihear Temple. Link: The unresolved territorial dispute around Preah Vihear periodically leads to military standoffs and armed clashes, which directly results in civilian displacement. Hence, Statement II explains Statement I."
+    },
+    {
+        "question": "48. With reference to the Assistance in Deploying Energy Efficient Technologies in Industries & Establishments (ADEETIE) Scheme, consider the following statements:\nI. It is a flagship initiative of the Ministry of New and Renewable Energy.\nII. It provides interest subvention on loans to Micro, Small and Medium Enterprises for Energy Efficiency technology adoption.\nIII. The energy-intensive sectors like Food Processing and textiles are covered under the scheme.\nWhich of the statements given above are correct?",
+        "options": [
+            "(a) I and II only",
+            "(b) I and III only",
+            "(c) II and III only",
+            "(d) I, II and III"
+        ],
+        "answer": 2,
+        "explanation": "Option c is the correct answer. Statement I is incorrect: The ADEETIE scheme is an initiative of the Ministry of Power, not MNRE. Statement II is correct: It provides financial support through interest subvention on loans to MSMEs for Energy Efficiency technology adoption (5% for Micro/Small, 3% for Medium). Statement III is correct: The scheme is targeted at MSMEs in 60 identified energy-intensive clusters across 14 sectors, including Food Processing and Textiles."
+    },
+    {
+        "question": "49. With reference to the Collection of Real Time Observations and Photo of Crops (CROPIC) initiative, consider the following statements:\nI. It is a technology-driven initiative launched under the Pradhan Mantri Krishi Sinchayi Yojana.\nII. It is funded through the Agriculture Infrastructure Fund (AIF) of the Government of India.\nWhich of the statements given above is/are incorrect?",
+        "options": [
+            "(a) II only",
+            "(b) I only",
+            "(c) Both I and II",
+            "(d) Neither I nor II"
+        ],
+        "answer": 2,
+        "explanation": "Option c is the correct answer. Statement I is incorrect: The CROPIC initiative is launched under the Pradhan Mantri Fasal Bima Yojana (PMFBY), not the Pradhan Mantri Krishi Sinchayi Yojana (PMKSY). Statement II is incorrect: The initiative is not funded through the Agriculture Infrastructure Fund (AIF). It is financed through the Fund for Innovation and Technology (FIAT) created under PMFBY."
+    },
+    {
+        "question": "50. Consider the following statements regarding the Pradhan Mantri Skilling and Employability Transformation through Upgraded ITIs (PM-SETU) Scheme:\nI. It is a Central Sector Scheme.\nII. It aims to transform 1,000 Government Industrial Training Institutes (ITIs) across India into modern, industry-aligned training institutions.\nIII. It follows a hub-and-spoke model, comprising hub ITIs linked to several spoke ITIs.\nWhich of the statements given above are correct?",
+        "options": [
+            "(a) I and II only",
+            "(b) I and III only",
+            "(c) II and III only",
+            "(d) I, II and III"
+        ],
+        "answer": 2,
+        "explanation": "Option c is the correct answer. Statement I is incorrect: PM-SETU is a Centrally Sponsored Scheme with funding shared among the Central Government, State Governments, and industry partners. Statement II is correct: It aims to upgrade 1,000 Government ITIs across India into modern, industry-aligned training institutions. Statement III is correct: It will follow a hub-and-spoke model, with 200 hub ITIs linked to 800 spoke ITIs."
+    },
+    {
+        "question": "51. With reference to Major Planetary Winds, consider the following statements:\nStatement I: The Westerlies are generally referred to as anti-trade winds.\nStatement II: The Westerlies blow from the polar high-pressure belts towards the sub-polar low-pressure belts.\nWhich one of the following is correct in respect of the above statements?",
+        "options": [
+            "(a) Both Statement I and Statement II are correct and Statement II explains Statement I.",
+            "(b) Both Statement I and Statement II are correct but Statement II does not explain Statement I.",
+            "(c) Statement I is correct but Statement II is not correct.",
+            "(d) Statement I is not correct but Statement II is correct."
+        ],
+        "answer": 2,
+        "explanation": "Option c is the correct answer. Statement I is correct: The westerlies are called anti-trade winds because they blow in a direction opposite to the trade winds (west to east in the mid-latitudes). Statement II is incorrect: The westerlies originate from the sub-tropical high-pressure belts around 30° latitude (not polar high pressure belts) and move towards the sub-polar low-pressure belts around 60° latitude."
+    },
+    {
+        "question": "52. With reference to the vertical distribution of temperature in earth's atmosphere, consider the following statements:\nStatement I: The temperature decreases with increase in altitude in the troposphere.\nStatement II: The Earth receives energy from the Sun in the form of short-wave radiation.\nWhich one of the following is correct in respect of the above statements?",
+        "options": [
+            "(a) Both Statement I and Statement II are correct and Statement II explains Statement I.",
+            "(b) Both Statement I and Statement II are correct but Statement II does not explain Statement I.",
+            "(c) Statement I is correct but Statement II is not correct.",
+            "(d) Statement I is not correct but Statement II is correct."
+        ],
+        "answer": 1,
+        "explanation": "Option b is the correct answer. Statement I is correct: The temperature in the troposphere generally decreases with increasing height (normal lapse rate) because the atmosphere is heated mainly from below. Statement II is correct: The Earth does receive energy from the Sun in the form of short-wave solar radiation. Statement II does not explain Statement I: While short-wave solar radiation is the original energy source, the lapse rate exists because the atmosphere is heated from the Earth's surface through terrestrial long-wave radiation, not simply on the arrival of solar energy."
+    },
+    {
+        "question": "53. Consider the following:\nI. Rocks from mining activities\nII. Meteors\nIII. Volcanic eruptions\nIV. Gravity anomaly\nV. Seismic waves\nHow many of the above are direct sources of information about the interior of the Earth?",
+        "options": [
+            "(a) Only two",
+            "(b) Only three",
+            "(c) Only four",
+            "(d) All the five"
+        ],
+        "answer": 0,
+        "explanation": "Option a is the correct answer. Direct sources involve actual material that can be physically examined. Option I is correct: Mining provides actual rock samples. Option II is incorrect: Meteors are indirect sources. Option III is correct: Volcanic eruptions eject molten material from within the Earth (direct source). Option IV is incorrect: Gravity anomalies are indirect sources. Option V is incorrect: Seismic waves are indirect sources relying on wave behaviour interpretation. Therefore, only two are direct sources."
+    },
+    {
+        "question": "54. With reference to ocean tides and their implications, consider the following statements:\nI. These are primarily caused by the gravitational pull exerted by the Moon and the Sun on the Earth's surface.\nII. The intertidal zone supports specialised life forms because organisms there are adapted to periodic submergence and exposure caused by tidal oscillations.\nIII. Kerala has recently declared coastal high-tide flooding as a State-specific disaster.\nWhich of the statements given above are correct?",
+        "options": [
+            "(a) I and II only",
+            "(b) II and III only",
+            "(c) I and III only",
+            "(d) I, II and III"
+        ],
+        "answer": 3,
+        "explanation": "Option d is the correct answer. Statement I is correct: Ocean tides occur due to the gravitational pull of the Moon and the Sun. Statement II is correct: The intertidal zone supports specialised life forms adapted to survive alternating exposure to air and submergence in water. Statement III is correct: Kerala has recently declared coastal high-tide flooding or sea incursion as a State-specific disaster to allow compensation to affected residents."
+    },
+    {
+        "question": "55. Which of the following pairs of countries are two largest soybean producers in the world?",
+        "options": [
+            "(a) Brazil and Argentina",
+            "(b) United States of America and China",
+            "(c) Brazil and United States of America",
+            "(d) United States of America and India"
+        ],
+        "answer": 2,
+        "explanation": "Option c is the correct answer. Brazil has emerged as the largest soybean producer and exporter in the world. The United States is the second-largest producer. Argentina is a major producer but ranks below them. China is the largest importer but not among the top two producers."
+    },
+    {
+        "question": "56. With reference to the major Himalayan tributaries of the Indus River flowing through India, which one of the following represents the correct north to south arrangement of these rivers?",
+        "options": [
+            "(a) Jhelum - Chenab - Sutlej",
+            "(b) Jhelum -Sutlej - Chenab",
+            "(c) Chenab - Jhelum - Sutlej",
+            "(d) Sutlej- Chenab - Jhelum"
+        ],
+        "answer": 0,
+        "explanation": "Option a is the correct answer. The correct North to South arrangement is: Jhelum, Chenab, Sutlej. Jhelum rises in the Kashmir Valley and is situated the northernmost. Chenab is formed in Himachal Pradesh and lies south of Jhelum but north of Sutlej. Sutlej is the southernmost among them."
+    },
+    {
+        "question": "57. With reference to the coastal plains of India, consider the following statements:\nStatement I: The western coast of India provides better natural conditions for the development of ports and harbours than the eastern coast.\nStatement II: The western coast is largely a submergent coast, whereas the eastern coast is predominantly an emergent coast.\nStatement III: The rivers flowing into the western coast form large deltas, while those on the eastern coast generally form estuaries.\nWhich of the above is correct in respect of the above statements?",
+        "options": [
+            "(a) Both Statement II and Statement III are correct and both of them explain Statement I.",
+            "(b) Both Statement II and Statement III are correct, but only one of them explains Statement I.",
+            "(c) Only one of the Statement II and III is correct and that explains Statement I.",
+            "(d) Neither Statement II nor Statement III is correct."
+        ],
+        "answer": 2,
+        "explanation": "Option c is the correct answer. Statement I is correct: The western coast provides better natural conditions for ports. Statement II is correct: The western coast is a submergent coast (indented shorelines), whereas the eastern coast is emergent. Statement II explains Statement I because submergence leads to indented coastlines ideal for ports. Statement III is incorrect: The eastern coastal rivers form extensive deltas, while western rivers usually form estuaries. Therefore, only Statement II is correct and explains Statement I."
+    },
+    {
+        "question": "58. Consider the following countries:\nI. Bahrain\nII. Kuwait\nIII. Iraq\nIV. Qatar\nV. Saudi Arabia\nHow many of the above countries have a border with the Persian Gulf?",
+        "options": [
+            "(a) Only three",
+            "(b) Only four",
+            "(c) Only two",
+            "(d) All the five"
+        ],
+        "answer": 3,
+        "explanation": "Option d is the correct answer. All five countries border the Persian Gulf. Bahrain is an island nation within the Gulf. Kuwait has direct access at the north-western tip. Iraq has a small 58 km coastline at the northern end. Qatar is a peninsula projecting into the Gulf. Saudi Arabia has a long eastern coastline along the Persian Gulf."
+    },
+    {
+        "question": "59. With reference to Tiger Reserves in India, consider the following information:\nI. Panna - Madhya Pradesh - Son River\nII. Satkosia - Odisha - Mahanadi River\nIII. Achanakmar - Chhattisgarh - Moyar River\nIV. Mudumalai - Tamil Nadu - Maniyari River\nIn how many of the above rows is the given information correctly matched?",
+        "options": [
+            "(a) Only one",
+            "(b) Only two",
+            "(c) Only three",
+            "(d) All the four"
+        ],
+        "answer": 0,
+        "explanation": "Option a is the correct answer. Row I is incorrect: Panna Tiger Reserve has the Ken River, not Son. Row II is correct: Satkosia is centred around the gorge formed by the Mahanadi River. Row III is incorrect: Achanakmar has the Maniyari River, not Moyar. Row IV is incorrect: Mudumalai has the Moyar River, not Maniyari. Only one row is correctly matched."
+    },
+    {
+        "question": "60. With reference to some of the world's famous mountain peaks, consider the following information:\nI. Mount Everest - Himalayas - India\nII. Aconcagua - Andes - Argentina\nIII. Mont Blanc - Rocky Mountains - Canada\nIV. Mount Elbert - Alps - Switzerland\nIn how many of the above rows is the information correctly matched?",
+        "options": [
+            "(a) Only one",
+            "(b) Only two",
+            "(c) Only three",
+            "(d) All the four"
+        ],
+        "answer": 0,
+        "explanation": "Option a is the correct answer. Row I is incorrect: Mount Everest is on the Nepal-China border, not in India. Row II is correct: Aconcagua is the highest peak of the Andes Mountains located in Argentina. Row III is incorrect: Mont Blanc is the highest peak of the Alps (not Rocky Mountains) and is associated with France/Italy. Row IV is incorrect: Mount Elbert is the highest peak of the Rocky Mountains (USA), not the Alps/Switzerland."
+    }
+]
