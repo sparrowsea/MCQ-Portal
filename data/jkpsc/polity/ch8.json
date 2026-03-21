@@ -3,192 +3,192 @@
         "question": "1. Which of the following statements about a uniform civil code is/are correct?\n1. It is binding on the State that a uniform civil code must be made applicable to all.\n2. The provision regarding a uniform civil code is contained in Part III of the Constitution.\nSelect the correct answer using the codes given below:",
         "options": ["(a) Only 1", "(b) Only 2", "(c) Both 1 and 2", "(d) Neither 1 nor 2"],
         "answer": 3,
-        "explanation": "Uniform Civil Code is a Directive Principle (Article 44) under Part IV, which is not legally binding on the state to implement immediately, and it is not in Part III (Fundamental Rights)."
+        "explanation": "The Uniform Civil Code is a Directive Principle (Article 44) located in Part IV of the Constitution. It is not legally binding or enforceable by courts, and it is not in Part III (Fundamental Rights)."
     },
     {
         "question": "2. Directive Principles of State Policy direct the State for which of the following?\n1. To secure a social order for the promotion of welfare of the people\n2. To separate judiciary from executive\n3. To improve public health\nSelect the correct answer using the codes given below:",
         "options": ["(a) 1 and 2", "(b) 2 and 3", "(c) 1 and 3", "(d) 1, 2 and 3"],
         "answer": 3,
-        "explanation": "These are explicitly mentioned in Article 38 (welfare), Article 50 (judiciary separation), and Article 47 (public health)."
+        "explanation": "These are all explicitly mentioned in the Constitution: Article 38 (welfare of the people), Article 50 (separation of judiciary), and Article 47 (public health)."
     },
     {
         "question": "3. Consider the following statements:\nDirective Principles of State Policy are:\n1. Directives in the nature of ideals of the state\n2. Directives influencing and shaping the policy of State\n3. Non-justiciable rights of the citizens\nWhich of these statements is/are correct?",
         "options": ["(a) Only 1", "(b) 2 and 3", "(c) Only 3", "(d) 1, 2 and 3"],
         "answer": 3,
-        "explanation": "DPSPs are fundamental in the governance of the country and guide state policy, though they cannot be enforced in a court of law (non-justiciable)."
+        "explanation": "DPSPs are ideals that the State should keep in mind while formulating policies and enacting laws. They are non-justiciable, meaning they are not legally enforceable by the courts for their violation."
     },
     {
         "question": "4. Which of the following statements about the changes made by the forty second amendment to the Constitution relating to the Directive Principles of State Policy are correct?\n1. It enabled State to provide free legal aid to its citizens.\n2. It provided for the State to secure the participation of workers in the management of undertakings.\n3. It required the state to minimise inequalities in income and status.\nSelect the correct answer using the codes given below:",
         "options": ["(a) 1 and 2", "(b) 1 and 3", "(c) 2 and 3", "(d) 1, 2 and 3"],
         "answer": 0,
-        "explanation": "The 42nd Amendment added Article 39A (free legal aid) and Article 43A (workers' participation). Minimising inequalities (Article 38) was added by the 44th Amendment."
+        "explanation": "The 42nd Amendment (1976) added Article 39A (free legal aid) and Article 43A (workers' participation). The directive to minimise inequalities (Article 38) was actually added later by the 44th Amendment Act (1978)."
     },
     {
         "question": "5. Which one of the following is the real guiding factor for the State to meet social needs and for the establishment of new social order?",
         "options": ["(a) Fundamental Rights", "(b) Preamble of the Constitution", "(c) Directive Principles of State Policy", "(d) Distribution of Powers"],
         "answer": 2,
-        "explanation": "DPSPs are intended to guide the state in establishing social and economic democracy."
+        "explanation": "The Directive Principles of State Policy are intended to guide the state in establishing a social and economic democracy, forming the core philosophy for a welfare state."
     },
     {
         "question": "6. Which one of the following is not stated as a Directive Principle of State Policy in the Constitution of India?",
         "options": ["(a) Organisation of village panchayats", "(b) Uniform civil code for the citizens", "(c) Separation of Judiciary from Executive", "(d) Right of minorities to establish and administer educational institutions"],
         "answer": 3,
-        "explanation": "Minority educational rights are Fundamental Rights under Article 30."
+        "explanation": "The right of minorities to establish and administer educational institutions is a Fundamental Right guaranteed under Article 30 (Part III), not a Directive Principle (Part IV)."
     },
     {
         "question": "7. Assertion (A): The Directive Principles of State Policy contained in the Constitution of India are relevant in determining the limits of reasonable restrictions laid down in Article 19 dealing with the Fundamental Right to Freedom.\nReason (R): The Fundamental Rights in Part III of the Constitution have been superseded by the Directive Principles.",
         "options": ["(a) Both A and R are individually true and R is the correct explanation of A", "(b) Both A and R are individually true but R is not the correct explanation of A", "(c) A is true but R is false", "(d) A is false but R is true"],
         "answer": 2,
-        "explanation": "DPSPs can be used to interpret the 'reasonableness' of restrictions on FRs, but FRs generally prevail over DPSPs except in specific cases."
+        "explanation": "Courts use DPSPs to determine if a restriction on Fundamental Rights is 'reasonable' (A is true). However, Fundamental Rights generally prevail over Directive Principles in cases of conflict, so they have not been superseded (R is false)."
     },
     {
         "question": "8. Though the Directive Principles of State Policy contained in the Constitution are not enforceable by any court, yet they are:",
         "options": ["(a) Fundamental in the governance of the country", "(b) Binding on the State", "(c) Enforceable at the instance of the President", "(d) Superior to Fundamental Rights of India"],
         "answer": 0,
-        "explanation": "Article 37 explicitly declares them fundamental in governance."
+        "explanation": "Article 37 explicitly declares that the Directive Principles are 'fundamental in the governance of the country' and it shall be the duty of the State to apply these principles in making laws."
     },
     {
         "question": "9. Which of the following are included in the Directive Principles of State Policy in the Constitution of India?\n1. Uniform civil code for the citizens\n2. Separation of judiciary from executive\n3. Protection of monuments of national importance\nSelect the correct answer by using the codes given below:",
         "options": ["(a) 1 and 2", "(b) 2 and 3", "(c) 1 and 3", "(d) 1, 2 and 3"],
         "answer": 3,
-        "explanation": "All three are listed: Art 44 (UCC), Art 50 (Separation), and Art 49 (Monuments)."
+        "explanation": "All three are explicitly listed in Part IV: Article 44 (Uniform Civil Code), Article 50 (Separation of judiciary and executive), and Article 49 (Protection of monuments)."
     },
     {
         "question": "10. With respect to the Directive Principles of State Policy, which one of the following pairs is not correctly matched?",
-        "options": ["(a) Condition of work/maternity relief: Art 42", "(b) Village Panchayats: Art 40", "(c) Public health/intoxicants: Art 47", "(d) Protection of monuments: Art 50"],
+        "options": ["(a) To secure just and humane conditions of work and maternity relief : Article 42", "(b) To organise village Panchayats as units of self government : Article 40", "(c) To secure the improvement of public health and the prohibition of intoxicating drinks and of drugs which are injurious to health : Article 47", "(d) To protect all monuments of historic interest and national importance : Article 50"],
         "answer": 3,
-        "explanation": "Protection of monuments is Article 49. Article 50 is separation of judiciary from executive."
+        "explanation": "The protection of monuments of historic interest and national importance is covered under Article 49. Article 50 deals with the separation of the judiciary from the executive."
     },
     {
         "question": "11. Which one of the following is not a Directive Principle of State Policy?",
-        "options": ["(a) Uniform civil code", "(b) Educational interest of weaker sections", "(c) Promotion of adult education", "(d) Protection of monuments"],
+        "options": ["(a) The State shall endeavour to secure for the citizens a uniform civil code.", "(b) The State shall promote with special care the educational and economic interest of the weaker sections.", "(c) The State shall endeavour to promote adult education to eliminate illiteracy.", "(d) The State shall endeavour to protect every monument, place or object of artistic or historic interest."],
         "answer": 2,
-        "explanation": "While the state promotes education for weaker sections (Art 46) and early childhood care (Art 45), 'promotion of adult education' specifically is not a stated DPSP."
+        "explanation": "While the Constitution directs the state to provide early childhood care and education (Article 45) and promote educational interests of weaker sections (Article 46), 'promotion of adult education to eliminate illiteracy' is not explicitly stated as a DPSP."
     },
     {
         "question": "12. Which one of the following is not the objective of the Directive Principles of State Policy?",
-        "options": ["(a) Establish a welfare state", "(b) Ensure socio-economic justice", "(c) Establish a religious state", "(d) Establish a secular state"],
+        "options": ["(a) To establish a welfare state", "(b) To ensure socio-economic justice", "(c) To establish a religious state", "(d) To establish a secular state"],
         "answer": 2,
-        "explanation": "The Constitution is a secular document; establishing a religious state contradicts its basic structure."
+        "explanation": "The Constitution of India aims to establish a secular state. Establishing a religious state goes against the basic philosophy of the Constitution and the Preamble."
     },
     {
         "question": "13. Assertion (A): The directive principles of state policy are not enforceable by any court.\nReason (R): The directive principles are more or less fundamental in the governance of the country.",
-        "options": ["(a) Both A and R are individually true and R is explanation", "(b) Both A and R are individually true but R is not explanation", "(c) A is true but R is false", "(d) A is false but R is true"],
+        "options": ["(a) Both A and R are individually true and R is the correct explanation of A", "(b) Both A and R are individually true but R is not the correct explanation of A", "(c) A is true but R is false", "(d) A is false but R is true"],
         "answer": 1,
-        "explanation": "Both statements are true according to Article 37, but the 'fundamental nature' is not the reason for 'non-enforceability'."
+        "explanation": "Both statements are true as per Article 37. However, the reason they are not enforceable is to provide the government flexibility based on resource availability, not because they are 'fundamental in governance'."
     },
     {
         "question": "14. Which one of the following is a correct statement?",
-        "options": ["(a) Primacy to all DPSPs over FRs", "(b) Primacy to all FRs over DPSPs", "(c) Primacy to all FRs except Art 14-32 over DPSPs", "(d) Primacy only to Art 39(b) and (c) over Art 14 and 19"],
+        "options": ["(a) Primacy is given to all the directive principles contained in Part IV of the Constitution over fundamental rights.", "(b) Primacy is given to all the fundamental rights conferred by Article 14-32 of the Constitution over directive principles.", "(c) Primacy is given to all the fundamental rights conferred by Part III of the Constitution over directive principles.", "(d) Primacy is given only to directive principles in clauses (b) and (c) of Article 39 over fundamental rights conferred by Articles 14 and 19 of the Constitution."],
         "answer": 3,
-        "explanation": "Article 31C provides that laws giving effect to Art 39(b) and (c) cannot be declared void for violating Art 14 or 19."
+        "explanation": "Under Article 31C, laws made to implement the Directive Principles contained in Article 39(b) and (c) cannot be declared void on the ground that they violate the Fundamental Rights guaranteed by Articles 14 and 19."
     },
     {
         "question": "15. Which one of the following Directive Principles was not originally provided for in the Constitution of India?",
-        "options": ["(a) Right to livelihood", "(b) Free legal aid", "(c) Uniform civil code", "(d) Slaughter prohibition"],
+        "options": ["(a) Citizen's right to an adequate means of livelihood", "(b) Free legal aid", "(c) Uniform civil code for the citizens", "(d) Prohibition of the slaughter of cows and calves"],
         "answer": 1,
-        "explanation": "Free legal aid (Article 39A) was added by the 42nd Amendment, 1976."
+        "explanation": "Equal justice and free legal aid (Article 39A) was not in the original Constitution; it was added by the 42nd Amendment Act in 1976."
     },
     {
         "question": "16. The term 'equal pay for equal work' is a:",
         "options": ["(a) Directive Principle of State Policy", "(b) Fundamental Right", "(c) Fundamental Duty", "(d) Constitutional Right"],
         "answer": 0,
-        "explanation": "It is mentioned under Article 39(d)."
+        "explanation": "Equal pay for equal work for both men and women is a Directive Principle listed under Article 39(d)."
     },
     {
         "question": "17. Assertion (A): Secularism is a basic feature of the Constitution of India in the sense that the State should be neutral to the different religions.\nReason (R): One of the Directive Principles of State Policy states that it will be a part of the duty of the state to improve the breeds of cattle and stop the slaughter of cows and calves.",
-        "options": ["(a) Both A and R are true and R is explanation", "(b) Both A and R are true but R is not explanation", "(c) A is true but R is false", "(d) A is false but R is true"],
+        "options": ["(a) Both A and R are individually true and R is the correct explanation of A", "(b) Both A and R are individually true but R is not the correct explanation of A", "(c) A is true but R is false", "(d) A is false but R is true"],
         "answer": 1,
-        "explanation": "Both are constitutional facts (neutrality and cattle protection) but are unrelated."
+        "explanation": "Both statements are factually correct components of the Constitution, but the protection of cattle (Article 48) is not the reason or explanation for India's secular character."
     },
     {
         "question": "18. Which one of the following is not a Directive Principle of State Policy?",
-        "options": ["(a) Organisation of Village Panchayats", "(b) Uniform Civil Code for citizens as well as non-citizens", "(c) Right to work, education and public assistance", "(d) Participation of workers in management"],
+        "options": ["(a) Organisation of Village Panchayats", "(b) Uniform Civil Code for citizens as well as non-citizens", "(c) Right to work, to education and to public assistance in certain cases", "(d) Participation of workers in management of industries"],
         "answer": 1,
-        "explanation": "The Uniform Civil Code under Article 44 is intended for citizens."
+        "explanation": "Article 44 directs the State to secure a Uniform Civil Code specifically for the 'citizens' throughout the territory of India, not for non-citizens."
     },
     {
         "question": "19. 'Directive Principles of State Policy are the conscience of the Constitution which embody the social philosophy of the Constitution' was described by:",
         "options": ["(a) Granville Austin", "(b) A.V. Dicey", "(c) Dr. B.R. Ambedkar", "(d) K.C. Wheare"],
         "answer": 0,
-        "explanation": "Granville Austin referred to DPSPs and FRs as the 'Conscience of the Constitution'."
+        "explanation": "Granville Austin, a prominent constitutional scholar, described the Fundamental Rights and Directive Principles as the 'Conscience of the Constitution'."
     },
     {
         "question": "20. Which part of the Constitution of India refers to the responsibility of the state towards international peace and security?",
-        "options": ["(a) Fundamental Rights", "(b) Directive Principles of State Policy", "(c) Emergency provisions", "(d) Preamble"],
+        "options": ["(a) Fundamental Rights", "(b) Directive Principles of State Policy", "(c) Emergency provisions", "(d) Preamble to the Constitution"],
         "answer": 1,
-        "explanation": "Article 51 of Part IV deals with promotion of international peace."
+        "explanation": "Article 51, the final Directive Principle in Part IV, directs the State to promote international peace and security and maintain just and honourable relations between nations."
     },
     {
-        "question": "21. Which of the following statements is/are correct?\n1. 42nd Amendment gave primacy to Directive Principles over Fundamental Rights.\n2. Minerva Mills case ruled that there has to be a balance between Part III and Part IV.\n3. National Commission for Review recommended that Directive Principles be made justiceable.",
+        "question": "21. Which of the following statements is/are correct?\n1. The 42nd Amendment to the Constitution of India gave primacy to Directive Principles over Fundamental Rights.\n2. Minerva Mills case ruled that there has to be a balance between Part III and Part IV of the Constitution.\n3. National Commission for Review of the Working of the Constitution has recommended that Directive Principles be made justiceable.",
         "options": ["(a) 1 and 2", "(b) 2 and 3", "(c) 1 and 3", "(d) 2 only"],
         "answer": 0,
-        "explanation": "The 42nd Amendment attempted to give DPSPs primacy, but Minerva Mills restored the balance."
+        "explanation": "The 42nd Amendment attempted to give primacy to all DPSPs. The Supreme Court in the Minerva Mills case (1980) struck this down, stating the Constitution is founded on the bedrock of balance between Parts III and IV."
     },
     {
         "question": "22. Assertion (A): Laws covered under Article 39 (b) and (c) have been given protective shield against some of the fundamental rights.\nReason (R): The Directive Principles are also regarded relevant for considering what are reasonable restrictions under Article 19.",
-        "options": ["(a) Both A and R are individually true and R is explanation", "(b) Both A and R are individually true but R is not explanation", "(c) A is true but R is false", "(d) A is false but R is true"],
+        "options": ["(a) Both A and R are individually true and R is the correct explanation of A", "(b) Both A and R are individually true but R is not the correct explanation of A", "(c) A is true but R is false", "(d) A is false but R is true"],
         "answer": 1,
-        "explanation": "Both are true principles of constitutional law but the 'reasonable restriction' role of DPSPs is not the cause for the Art 31C protection shield."
+        "explanation": "Both are true principles of constitutional law. However, the fact that DPSPs help determine 'reasonable restrictions' is not the specific legal reason why Article 31C provides a protective shield to Articles 39(b) and (c)."
     },
     {
-        "question": "23. Which of the following is/are among Directive Principles of State Policy?\n1. Promotion of science and technology\n2. Secure a Uniform Civil Code\n3. Develop population policy\n4. Take steps to promote tourism",
+        "question": "23. Which of the following is/are among Directive Principles of State Policy?\n1. The State shall strive to promote science and technology for development.\n2. The State shall endeavour to secure for citizens a Uniform Civil Code throughout India.\n3. The State shall try to develop population policy and family planning programmes.\n4. The State shall take steps to promote tourism.",
         "options": ["(a) 1 and 3", "(b) 2 and 4", "(c) 2 only", "(d) 1, 2, 3 and 4"],
         "answer": 2,
-        "explanation": "Only the Uniform Civil Code (Art 44) is an explicit DPSP. Others are state activities but not explicitly listed in Part IV."
+        "explanation": "Of the options provided, only the Uniform Civil Code (Article 44) is explicitly listed as a Directive Principle in Part IV of the Constitution."
     },
     {
         "question": "24. The Directive Principles of State Policy are fundamental for the:",
         "options": ["(a) Upliftment of backward classes", "(b) Protection of individual rights", "(c) Administration of justice", "(d) Governance of state"],
         "answer": 3,
-        "explanation": "Article 37 declares them fundamental in the governance of the country."
+        "explanation": "Article 37 unequivocally states that the Directive Principles are fundamental in the governance of the country."
     },
     {
         "question": "25. Assertion (A): Any individual affected due to violation of any of the Directive Principles of State Policy, cannot move the court.\nReason (R): The Directive Principles are not justiciable.",
-        "options": ["(a) Both A and R are true and R is explanation", "(b) Both A and R are true but R is not explanation", "(c) A is true but R is false", "(d) A is false but R is true"],
+        "options": ["(a) Both A and R are true and R is the correct explanation of A", "(b) Both A and R are true but R is not the correct explanation of A", "(c) A is true but R is false", "(d) A is false but R is true"],
         "answer": 0,
-        "explanation": "Since they are non-justiciable, courts cannot enforce them at the request of an individual."
+        "explanation": "Because they are non-justiciable (Article 37), courts cannot enforce them at the request of an individual, meaning one cannot file a writ petition solely for the violation of a DPSP."
     },
     {
         "question": "26. Which one of the following statements regarding the current status of the relationship between Fundamental Rights and Directive Principles is correct?",
-        "options": ["(a) DPSPs never have priority", "(b) DPSPs always have priority", "(c) FRs always have priority", "(d) In some cases DPSPs may get priority"],
+        "options": ["(a) Directive Principles cannot get priority over Fundamental Rights in any case.", "(b) Directive Principles always get priority over Fundamental Rights.", "(c) Fundamental Rights always get priority over Directive Principles.", "(d) In some cases Directive Principles may get priority over Fundamental Rights."],
         "answer": 3,
-        "explanation": "Article 31C allows Art 39(b) and (c) to take priority over Art 14 and 19."
+        "explanation": "In most cases, Fundamental Rights have priority. However, under Article 31C, laws implementing Directive Principles 39(b) and 39(c) get priority over the Fundamental Rights guaranteed by Articles 14 and 19."
     },
     {
         "question": "27. Right to work in India is a:",
         "options": ["(a) Fundamental right", "(b) Directive principle", "(c) Constitutional right", "(d) Constitutional duty"],
         "answer": 1,
-        "explanation": "It is stated under Article 41."
+        "explanation": "Article 41 states that the State shall, within the limits of its economic capacity, make effective provision for securing the right to work. It is a Directive Principle."
     },
     {
         "question": "28. Assertion (A): It is the legal and Constitutional duty of the State to provide legal aid to the poor.\nReason (R): No one shall be denied justice by reason of his poverty.",
-        "options": ["(a) Both A and R are true and R is explanation", "(b) Both A and R are true but R is not explanation", "(c) A is true but R is false", "(d) A is false but R is true"],
+        "options": ["(a) Both A and R are true and R is the correct explanation of A", "(b) Both A and R are true but R is not the correct explanation of A", "(c) A is true but R is false", "(d) A is false but R is true"],
         "answer": 0,
-        "explanation": "Article 39A mandates the state to provide legal aid to ensure equal opportunity for justice."
+        "explanation": "Article 39A makes it a constitutional duty of the state to provide free legal aid to ensure that opportunities for securing justice are not denied to any citizen by reason of economic or other disabilities."
     },
     {
         "question": "29. Consider the following statements:\nDirective Principles of State Policy are:\n1. Not amendable\n2. Not enforceable by any court\n3. Fundamental in the governance of the country\nWhich of the above statements are correct?",
         "options": ["(a) 1 and 2", "(b) 1 and 3", "(c) 2 and 3", "(d) 1, 2 and 3"],
         "answer": 2,
-        "explanation": "DPSPs can be amended; Statements 2 and 3 are correct according to Article 37."
+        "explanation": "Directive Principles can definitely be amended (e.g., the 42nd, 44th, 86th, and 97th Amendments added/changed them). Statements 2 and 3 are correct as per Article 37."
     },
     {
         "question": "30. The 'Instrument of Instructions' contained in the Government of India Act, 1935, has been incorporated in the Constitution of India in the year 1950 as:",
         "options": ["(a) Fundamental Rights", "(b) Directive Principles of State Policy", "(c) Fundamental Duties", "(d) Emergency provisions"],
         "answer": 1,
-        "explanation": "The 1935 Act's instructions to governors were the precursor to Part IV."
+        "explanation": "Dr. B.R. Ambedkar noted that the Directive Principles are like the 'Instrument of Instructions' issued to the Governor-General and Governors of colonies under the 1935 Act."
     },
     {
         "question": "31. Which one of the following is not a correct description of the Directive Principles of State Policy?",
-        "options": ["(a) Not enforceable by courts", "(b) Have a political sanction", "(c) Declaration of objectives for legislation", "(d) Promise equal income and free health care"],
+        "options": ["(a) Directive Principles are not enforceable by the courts.", "(b) Directive Principles have a political sanction.", "(c) Directive Principles are declaration of objectives for State Legislation.", "(d) Directive Principles promise equal income and free health care for all Indians."],
         "answer": 3,
-        "explanation": "DPSPs do not promise specific 'equal income' but rather work toward reducing inequalities."
+        "explanation": "While DPSPs aim to minimize inequalities in income and improve public health, they do not 'promise' absolute equal income or universally free healthcare as a strict mandate."
     },
     {
-        "question": "32. Consider the following statements:\n1. Article 46 provides for free legal aid to SCs and STs.\n2. Article 44 provides for promotion of cottage industries.",
+        "question": "32. Consider the following statements:\n1. Article 46 of the Constitution of India provides for free legal aid to Scheduled Castes and Scheduled Tribes.\n2. Article 44 of the Constitution of India provides for promotion of cottage industries.\nWhich of the statements given above is/are correct?",
         "options": ["(a) Only 1", "(b) Only 2", "(c) Both 1 and 2", "(d) Neither 1 nor 2"],
         "answer": 3,
-        "explanation": "Article 46 is educational/economic interests of weaker sections; Art 44 is UCC. Free legal aid is 39A and cottage industries is 43."
+        "explanation": "Both are incorrect. Article 46 deals with the educational and economic interests of weaker sections. Article 44 deals with the Uniform Civil Code. Free legal aid is under Article 39A, and cottage industries are under Article 43."
     }
 ]
