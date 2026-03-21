@@ -1,1 +1,87 @@
+[
+    {
+        "question": "1. Consider the following statements:\n1. An amendment to the Constitution of India can be initiated by the introduction of a Bill only in the Lok Sabha.\n2. The Bill has to be passed in each House by a majority of the total membership of that House and by a majority of not less than two-thirds of the members of that House present and voting.\nWhich of the statements given above is/are correct?",
+        "options": ["(a) Only 1", "(b) Only 2", "(c) Both 1 and 2", "(d) Neither 1 nor 2"],
+        "answer": 1,
+        "explanation": "Statement 1 is incorrect because an amendment bill can be introduced in EITHER House of Parliament (Lok Sabha or Rajya Sabha). Statement 2 correctly describes the special majority required under Article 368."
+    },
+    {
+        "question": "2. Which of the following items requires ratification by the Legislatures of not less than one-half of the States to make a constitutional amendment?\n1. Representation of States in Parliament\n2. Any of the Lists in the Seventh Schedule\n3. Manner of election of the President of India\nSelect the correct answer using the codes given below:",
+        "options": ["(a) 1 and 2", "(b) 2 and 3", "(c) 1 and 3", "(d) 1, 2 and 3"],
+        "answer": 3,
+        "explanation": "All three items affect the federal structure of the Constitution. Therefore, under Article 368, they require a special majority of Parliament plus ratification by half of the state legislatures."
+    },
+    {
+        "question": "3. Restriction of the writ jurisdiction of High Courts under Article 226 is possible through an amendment passed by:",
+        "options": ["(a) Special majority of Parliament", "(b) Simple majority of Parliament", "(c) Special majority of Parliament and Ratification by half of the States", "(d) Special majority of Parliament and Ratification by three-fourths of the States"],
+        "answer": 2,
+        "explanation": "Any changes to provisions relating to the Supreme Court and High Courts (which affects the federal judicial structure) require a special majority in Parliament and consent of at least half of the state legislatures."
+    },
+    {
+        "question": "4. On receipt of a Constitutional Amendment Bill, after passing by each House of Parliament, the President:",
+        "options": ["(a) Shall give his assent", "(b) May give his assent", "(c) May withhold his assent", "(d) May return the Bill for reconsideration"],
+        "answer": 0,
+        "explanation": "The 24th Constitutional Amendment Act, 1971, made it obligatory for the President to give his assent to a constitutional amendment bill."
+    },
+    {
+        "question": "5. Which of the following matters can Parliament modify by a simple majority?\n1. Alteration of names, areas or boundaries of States\n2. Appointment of additional judges\n3. Abolition of the second chamber of a State Legislature\n4. Administration of Scheduled Areas\nSelect the correct answer using the codes given below:",
+        "options": ["(a) 1, 2 and 3", "(b) 1, 2 and 4", "(c) 1, 3 and 4", "(d) 2, 3 and 4"],
+        "answer": 2,
+        "explanation": "Alteration of state boundaries (Art 3/4), creation/abolition of legislative councils (Art 169), and administration of Scheduled Areas (5th/6th Schedules) can be done by simple majority. Appointment of judges is an executive action, not a constitutional amendment."
+    },
+    {
+        "question": "6. The constituent power of Parliament to amend the Constitution:",
+        "options": ["(a) Includes the power to amend by way of addition, variation or repeal", "(b) Is unrestricted by any basic structure doctrine", "(c) Is not procedurally limited by Article 368", "(d) Is an extra-constitutional power"],
+        "answer": 0,
+        "explanation": "Article 368(1) states that Parliament may in exercise of its constituent power amend by way of addition, variation or repeal any provision of this Constitution in accordance with the procedure laid down in this article."
+    },
+    {
+        "question": "7. A Constitutional Amendment to which of the following provisions DOES NOT require ratification by the State Legislatures?",
+        "options": ["(a) The lists in the Seventh Schedule", "(b) Article 368 itself", "(c) Article 73 (Extent of executive power of the Union)", "(d) Article 161 (Power of Governor to grant pardons)"],
+        "answer": 3,
+        "explanation": "Article 161 deals with the Governor's pardoning power and does not require state ratification to amend. The other three provisions directly affect the federal balance and require ratification."
+    },
+    {
+        "question": "8. Which of the following features are present in the Indian Constitution?\n1. Multiple procedures for amendment\n2. States are not empowered to initiate a constitutional amendment\n3. Joint-sittings of Parliament are permitted to resolve deadlocks over amendment bills",
+        "options": ["(a) 1 and 3", "(b) 1 and 2", "(c) 2 and 3", "(d) 1, 2 and 3"],
+        "answer": 1,
+        "explanation": "There are different procedures for amendment (simple majority, special majority, special + ratification). States cannot initiate amendments. However, there is NO provision for a joint sitting for a constitutional amendment bill (it must be passed by each house separately)."
+    },
+    {
+        "question": "9. A Constitutional amendment must be ratified by the state legislatures if it changes the provisions relating to:",
+        "options": ["(a) Fundamental Rights", "(b) Directive Principles of State Policy", "(c) Fundamental Duties", "(d) High Courts in the States"],
+        "answer": 3,
+        "explanation": "Matters relating to the Supreme Court and High Courts (Chapter IV of Part V and Chapter V of Part VI) require state ratification because they affect the federal structure."
+    },
+    {
+        "question": "10. An amendment for creating a new State in India must be passed by:",
+        "options": ["(a) Simple majority in Parliament", "(b) Simple majority in Parliament and State ratification", "(c) Two-thirds majority in Parliament and State ratification", "(d) Two-thirds majority of members present and voting"],
+        "answer": 0,
+        "explanation": "New states are created under Article 3, and Article 4 declares that laws made under Article 2 and 3 are not considered constitutional amendments under Article 368. They are passed by a simple legislative majority."
+    },
+    {
+        "question": "11. The provision of Article 368 of the Constitution of India deals with:",
+        "options": ["(a) Power of Parliament to amend the Constitution", "(b) Procedure for amendment of the Constitution", "(c) Both the power of Parliament to amend the Constitution and the procedure therefor", "(d) Ratification of amendments by the State Legislatures only"],
+        "answer": 2,
+        "explanation": "The 24th Amendment Act, 1971 amended the heading of Article 368 to explicitly read 'Power of Parliament to amend the Constitution and procedure therefor'."
+    },
+    {
+        "question": "12. How is an amendment to the Seventh Schedule of the Constitution initiated and passed?",
+        "options": ["(a) By a majority of the total membership of Parliament", "(b) By a special majority of Parliament", "(c) By a special majority of Parliament and ratification by legislatures of half of the States", "(d) By a special majority of Parliament and ratification by legislatures of two-thirds of the States"],
+        "answer": 2,
+        "explanation": "The Seventh Schedule contains the Union, State, and Concurrent Lists. Any change to it affects federal power distribution and requires a special majority in Parliament plus ratification by half of the states."
+    },
+    {
+        "question": "13. Amendment of which of the following provisions requires ratification by the State Legislatures?",
+        "options": ["(a) Article 157 (Qualifications for appointment as Governor)", "(b) Article 123 (Power of President to promulgate Ordinances)", "(c) Article 56 (Term of office of President)", "(d) Article 54 (Election of President)"],
+        "answer": 3,
+        "explanation": "Article 54 (Election of the President) is explicitly listed under the entrenched provisions of Article 368 that require state ratification."
+    },
+    {
+        "question": "14. Consider the following statements about the amendment of the Constitution:\n1. A joint session of Parliament can be called to resolve a deadlock over an amendment bill.\n2. The President must give his assent to a constitutional amendment bill.\n3. Amendment of the 7th Schedule requires ratification of more than half of the States.\n4. Constitutional amendment bills can only be introduced in the Lok Sabha.\nWhich of the statements is/are correct?",
+        "options": ["(a) 1 and 2", "(b) 2 only", "(c) 2 and 3", "(d) 1, 2 and 3"],
+        "answer": 1,
+        "explanation": "Only statement 2 is correct (made mandatory by the 24th Amendment). Joint sessions are not allowed. 7th Schedule requires EXACTLY half the states (not 'more than' half). Bills can be introduced in either house."
+    }
+]
 
