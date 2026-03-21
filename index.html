@@ -63,6 +63,11 @@
                 <p>Questions 31 to 60</p>
                 <button class="btn-start" style="background:#d69e2e;">Start</button>
             </div>
+            <div class="test-card upsc-card" onclick="startTest('upsc_mock/Forum/FLT-1(part3)')">
+                <h3 style="color:#d69e2e;">Forum FLT-1 (Part 3)</h3>
+                <p>Questions 61 to 100</p>
+                <button class="btn-start" style="background:#d69e2e;">Start</button>
+            </div>
         </div>
 
         <h3 class="subject-title jkpsc-title">JKPSC Module</h3>
@@ -122,9 +127,23 @@
 <div id="result-screen" class="main-wrapper" style="display:none; text-align:center;">
     <div style="background:white; padding:40px; border-radius:15px; width:100%; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
         <h1 style="color:#2d3748;">Session Completed</h1>
+        
         <div style="background:#ebf8ff; padding:30px; border-radius:10px; border:1px solid #bee3f8; margin: 20px 0;">
-            <h2 id="final-score" style="font-size:3rem; color:#2b6cb0; margin:0;"></h2>
+            <h2 id="final-score" style="font-size:3.5rem; color:#2b6cb0; margin:0;"></h2>
+            
+            <div style="display:flex; justify-content:center; gap:20px; margin-top:20px; font-size:1.2rem; flex-wrap:wrap;">
+                <div style="background:#c6f6d5; padding:10px 20px; border-radius:8px; color:#22543d;">
+                    <strong>Correct:</strong> <span id="correct-count">0</span>
+                </div>
+                <div style="background:#fed7d7; padding:10px 20px; border-radius:8px; color:#742a2a;">
+                    <strong>Incorrect:</strong> <span id="incorrect-count">0</span>
+                </div>
+                <div style="background:#edf2f7; padding:10px 20px; border-radius:8px; color:#2d3748;">
+                    <strong>Unattempted:</strong> <span id="unattempted-count">0</span>
+                </div>
+            </div>
         </div>
+        
         <button onclick="location.reload()" style="padding:15px 30px; font-size:1.1rem; background:#2d3748; color:white; border:none; border-radius:8px; cursor:pointer;">Back to Dashboard</button>
     </div>
 </div>
@@ -244,8 +263,25 @@
         document.getElementById('test-wrapper').style.display = 'none';
         document.getElementById('result-screen').style.display = 'flex';
         
-        const score = answers.filter((ans, i) => ans === questions[i].answer).length;
-        document.getElementById('final-score').innerText = score + " / " + questions.length;
+        let correctCount = 0;
+        let incorrectCount = 0;
+        let unattemptedCount = 0;
+
+        answers.forEach((ans, i) => {
+            if (ans === null) {
+                unattemptedCount++;
+            } else if (ans === questions[i].answer) {
+                correctCount++;
+            } else {
+                incorrectCount++;
+            }
+        });
+
+        document.getElementById('final-score').innerText = correctCount + " / " + questions.length;
+        document.getElementById('correct-count').innerText = correctCount;
+        document.getElementById('incorrect-count').innerText = incorrectCount;
+        document.getElementById('unattempted-count').innerText = unattemptedCount;
+        
         window.scrollTo(0,0);
     }
 </script>
